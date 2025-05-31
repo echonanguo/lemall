@@ -23,10 +23,10 @@ public class SpringDocConfig implements WebMvcConfigurer {
                         .description("lemall搜索相关接口文档")
                         .version("v1.0.0")
                         .license(new License().name("Apache 2.0")
-                                .url("https://github.com/echonanguo/lemall-learning")))
+                                .url("https://github.com/echonanguo/lemall")))
                 .externalDocs(new ExternalDocumentation()
                         .description("SpringBoot电商项目lemall全套文档")
-                        .url("http://www.echonanguo.com"));
+                        .url("https://echonanguo.com"));
     }
 
     @Override
