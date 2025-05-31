@@ -59,5 +59,28 @@
 
 1. 打开Kibana web管理界面，找到`Stack Management`
 
-   !([Snipaste_2025-06-01_01-22-54.png](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-22-54.png))
+   ![](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-22-54.png)
 
+2. 找到`数据视图`
+
+   ![](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-23-17.png)
+
+3.创建数据视图
+
+![](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-23-34.png)
+
+4. 通过通配符创建视图
+
+   ![](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-24-58.png)
+
+5. 按以上步骤继续创建`business error record`
+
+![](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-25-14.png)
+
+6. 去查看日志
+
+![](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-25-40.png)
+
+7. 选择对应视图即可查看相应日志
+
+   ![](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-26-25.png)
