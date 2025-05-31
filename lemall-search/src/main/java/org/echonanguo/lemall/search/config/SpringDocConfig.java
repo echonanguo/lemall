@@ -9,9 +9,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/**
- * SpringDoc相关配置
- * Created by echonanguo on 2024/3/5.
+/*
+ * @Description: SpringDoc相关配置
+ * @Author:  echonanguo
+ * @date:  2025/6/1 上午12:34
  */
 @Configuration
 public class SpringDocConfig implements WebMvcConfigurer {

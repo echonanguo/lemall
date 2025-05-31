@@ -28,9 +28,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-/**
- * 搜索商品管理Service实现类
- * Created by echonanguo on 2018/6/19.
+/*
+ * @Description: 搜索商品管理Service实现类
+ * @Author:  echonanguo
+ * @date:  2025/6/1 上午12:36
  */
 @Service
 public class EsProductServiceImpl implements EsProductService {

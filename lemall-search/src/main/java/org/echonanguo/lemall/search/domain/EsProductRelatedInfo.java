@@ -2,9 +2,10 @@ package org.echonanguo.lemall.search.domain;
 
 import java.util.List;
 
-/**
- * 搜索商品的品牌名称，分类名称及属性
- * Created by echonanguo on 2018/6/27.
+/*
+ * @Description: 搜索商品的品牌名称，分类名称及属性
+ * @Author:  echonanguo
+ * @date:  2025/6/1 上午12:35
  */
 public class EsProductRelatedInfo {
     private List<String> brandNames;

@@ -6,9 +6,10 @@ import org.springframework.data.domain.Page;
 
 import java.util.List;
 
-/**
- * 商品搜索管理Service
- * Created by echonanguo on 2018/6/19.
+/*
+ * @Description: 商品搜索管理Service
+ * @Author:  echonanguo
+ * @date:  2025/6/1 上午12:36
  */
 public interface EsProductService {
     /**

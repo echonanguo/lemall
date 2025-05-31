@@ -5,9 +5,10 @@ import org.echonanguo.lemall.search.domain.EsProduct;
 
 import java.util.List;
 
-/**
- * 搜索商品管理自定义Dao
- * Created by echonanguo on 2018/6/19.
+/*
+ * @Description: 搜索商品管理自定义Dao
+ * @Author:  echonanguo
+ * @date:  2025/6/1 上午12:34
  */
 public interface EsProductDao {
     /**

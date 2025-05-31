@@ -10,9 +10,10 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * 搜索商品的信息
- * Created by echonanguo on 2018/6/19.
+/*
+ * @Description: 搜索商品的信息
+ * @Author:  echonanguo
+ * @date:  2025/6/1 上午12:35
  */
 @Document(indexName = "pms")
 @Setting(shards = 1,replicas = 0)

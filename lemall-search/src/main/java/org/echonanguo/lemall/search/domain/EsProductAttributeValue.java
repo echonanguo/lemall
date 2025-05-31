@@ -5,9 +5,10 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.io.Serializable;
 
-/**
- * 搜索商品的属性信息
- * Created by echonanguo on 2018/6/27.
+/*
+ * @Description: 搜索商品的信息
+ * @Author:  echonanguo
+ * @date:  2025/6/1 上午12:35
  */
 public class EsProductAttributeValue implements Serializable {
     private static final long serialVersionUID = 1L;

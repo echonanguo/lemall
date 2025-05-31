@@ -3,9 +3,10 @@ package org.echonanguo.lemall.search.config;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * MyBatis相关配置
- * Created by echonanguo on 2019/4/8.
+/*
+ * @Description: MyBatis相关配置
+ * @Author:  echonanguo
+ * @date:  2025/6/1 上午12:33
  */
 @Configuration
 @MapperScan({"org.echonanguo.lemall.mapper","org.echonanguo.lemall.search.dao"})
