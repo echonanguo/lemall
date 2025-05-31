@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.echonanguo.org.echonanguo.lemall.dao.OmsOrderDao">
-    <resultMap id="orderDetailResultMap" type="org.echonanguo.org.echonanguo.lemall.dto.OmsOrderDetail" extends="org.echonanguo.lemall.mapper.OmsOrderMapper.BaseResultMap">
+<mapper namespace="org.echonanguo.lemall.dao.OmsOrderDao">
+    <resultMap id="orderDetailResultMap" type="org.echonanguo.lemall.dto.OmsOrderDetail" extends="org.echonanguo.lemall.mapper.OmsOrderMapper.BaseResultMap">
         <collection property="orderItemList" resultMap="org.echonanguo.lemall.mapper.OmsOrderItemMapper.BaseResultMap" columnPrefix="item_"/>
         <collection property="historyList" resultMap="org.echonanguo.lemall.mapper.OmsOrderOperateHistoryMapper.BaseResultMap" columnPrefix="history_"/>
     </resultMap>

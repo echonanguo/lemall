@@ -14,6 +14,6 @@ logging:
     path: /var/logs
   level:
     root: info
-    org.nanguo.lemall: info
+    org.echonanguo.lemall: info
 logstash:
   host: logstash

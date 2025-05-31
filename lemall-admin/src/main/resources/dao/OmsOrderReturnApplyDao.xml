@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.echonanguo.org.echonanguo.lemall.dao.OmsOrderReturnApplyDao">
-    <resultMap id="returnApplyDetailResultMap" type="org.echonanguo.org.echonanguo.lemall.dto.OmsOrderReturnApplyResult" extends="org.echonanguo.lemall.mapper.OmsOrderReturnApplyMapper.BaseResultMap">
+<mapper namespace="org.echonanguo.lemall.dao.OmsOrderReturnApplyDao">
+    <resultMap id="returnApplyDetailResultMap" type="org.echonanguo.lemall.dto.OmsOrderReturnApplyResult" extends="org.echonanguo.lemall.mapper.OmsOrderReturnApplyMapper.BaseResultMap">
         <association property="companyAddress" resultMap="org.echonanguo.lemall.mapper.OmsCompanyAddressMapper.BaseResultMap" columnPrefix="ca_"/>
     </resultMap>
     <select id="getList" resultMap="org.echonanguo.lemall.mapper.OmsOrderReturnApplyMapper.BaseResultMap">

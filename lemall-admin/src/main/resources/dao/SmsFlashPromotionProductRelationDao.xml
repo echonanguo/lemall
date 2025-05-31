@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.echonanguo.org.echonanguo.lemall.dao.SmsFlashPromotionProductRelationDao">
-    <resultMap id="flashProductMap" type="org.echonanguo.org.echonanguo.lemall.dto.SmsFlashPromotionProduct" extends="org.echonanguo.lemall.mapper.SmsFlashPromotionProductRelationMapper.BaseResultMap">
+<mapper namespace="org.echonanguo.lemall.dao.SmsFlashPromotionProductRelationDao">
+    <resultMap id="flashProductMap" type="org.echonanguo.lemall.dto.SmsFlashPromotionProduct" extends="org.echonanguo.lemall.mapper.SmsFlashPromotionProductRelationMapper.BaseResultMap">
         <association property="product" resultMap="org.echonanguo.lemall.mapper.PmsProductMapper.BaseResultMap" columnPrefix="p_"/>
     </resultMap>
     <select id="getList" resultMap="flashProductMap">

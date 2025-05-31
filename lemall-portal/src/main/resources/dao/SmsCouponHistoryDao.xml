@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.nanguo.lemall.org.echonanguo.lemall.portal.dao.SmsCouponHistoryDao">
-    <resultMap id="couponHistoryDetailMap" type="org.nanguo.lemall.org.echonanguo.lemall.portal.domain.SmsCouponHistoryDetail"
-               extends="org.nanguo.lemall.mapper.SmsCouponHistoryMapper.BaseResultMap">
-        <association property="coupon" resultMap="org.nanguo.lemall.mapper.SmsCouponMapper.BaseResultMap" columnPrefix="c_">
+<mapper namespace="org.echonanguo.portal.dao.SmsCouponHistoryDao">
+    <resultMap id="couponHistoryDetailMap" type="org.echonanguo.portal.domain.SmsCouponHistoryDetail"
+               extends="org.echonanguo.lemall.mapper.SmsCouponHistoryMapper.BaseResultMap">
+        <association property="coupon" resultMap="org.echonanguo.lemall.mapper.SmsCouponMapper.BaseResultMap" columnPrefix="c_">
         </association>
-        <collection property="productRelationList" columnPrefix="cpr_" resultMap="org.nanguo.lemall.mapper.SmsCouponProductRelationMapper.BaseResultMap">
+        <collection property="productRelationList" columnPrefix="cpr_" resultMap="org.echonanguo.lemall.mapper.SmsCouponProductRelationMapper.BaseResultMap">
         </collection>
-        <collection property="categoryRelationList" columnPrefix="cpcr_" resultMap="org.nanguo.lemall.mapper.SmsCouponProductCategoryRelationMapper.BaseResultMap">
+        <collection property="categoryRelationList" columnPrefix="cpcr_" resultMap="org.echonanguo.lemall.mapper.SmsCouponProductCategoryRelationMapper.BaseResultMap">
         </collection>
     </resultMap>
     <select id="getDetailList" resultMap="couponHistoryDetailMap">
@@ -34,7 +34,7 @@
         AND ch.use_status = 0
     </select>
 
-    <select id="getCouponList" resultMap="org.nanguo.lemall.mapper.SmsCouponMapper.BaseResultMap">
+    <select id="getCouponList" resultMap="org.echonanguo.lemall.mapper.SmsCouponMapper.BaseResultMap">
         SELECT
           c.*
         FROM
