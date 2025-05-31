@@ -51,4 +51,13 @@
 
 6. 监控中心`lemall-monitor`
 
-## lemall功能结构说明
+## 日志收集和可视化
+
+> 该项目采用ELK实现日志收集和可视化
+
+在使用ELK日志收集系统之前，需要先启动`mall-admin`、`mall-portal`、`mall-search`三个服务。
+
+1. 打开Kibana web管理界面，找到`Stack Management`
+
+   !([Snipaste_2025-06-01_01-22-54.png](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-22-54.png))
+
