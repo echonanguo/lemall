@@ -12,7 +12,7 @@
 
 - 去mysql创建一个名为的`lemall`数据库，并导入`/doc/sql/lemall.sql`
 
-- 打开minio对象存储web管理端，创建一个名为lemall的Bucket
+- 打开minio对象存储web管理端，创建一个名为lemall的Bucket，并配置允许公共读
 
 - 在nacos注册中心添加远程配置
   
