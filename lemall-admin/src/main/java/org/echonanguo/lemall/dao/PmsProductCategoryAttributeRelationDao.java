@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 自定义商品分类和属性关系Dao
- * Created by echonanguo on 2018/5/23.
+ * Created by echonanguo on 2025/5/23.
  */
 public interface PmsProductCategoryAttributeRelationDao {
     /**

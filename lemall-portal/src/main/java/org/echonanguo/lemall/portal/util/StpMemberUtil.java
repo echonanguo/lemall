@@ -31,7 +31,7 @@ import java.util.List;
  * @auther echonanguo
  * @description 前台商城用户登录认证工具类
  * 拷贝于默认的StpUtil，仅改动了TYPE和stpLogic对象
- * @date 2024/1/26
+ * @date 2025/1/26
  * @github https://github.com/echonanguo
  */
 public class StpMemberUtil {

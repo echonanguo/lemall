@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 后台菜单管理Service
- * Created by echonanguo on 2020/2/2.
+ * Created by echonanguo on 2025/2/2.
  */
 public interface UmsMenuService {
     /**

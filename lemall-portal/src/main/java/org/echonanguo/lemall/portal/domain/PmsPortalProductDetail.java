@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 前台商品详情
- * Created by echonanguo on 2020/4/6.
+ * Created by echonanguo on 2025/4/6.
  */
 @Getter
 @Setter

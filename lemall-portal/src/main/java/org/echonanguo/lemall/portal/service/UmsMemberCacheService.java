@@ -4,7 +4,7 @@ import org.echonanguo.lemall.model.UmsMember;
 
 /**
  * 会员信息缓存业务类
- * Created by echonanguo on 2020/3/14.
+ * Created by echonanguo on 2025/3/14.
  */
 public interface UmsMemberCacheService {
     /**

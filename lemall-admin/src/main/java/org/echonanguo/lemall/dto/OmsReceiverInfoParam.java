@@ -6,7 +6,7 @@ import lombok.Setter;
 
 /**
  * 订单修改收货人信息参数
- * Created by echonanguo on 2018/10/29.
+ * Created by echonanguo on 2025/10/29.
  */
 @Getter
 @Setter

@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 自定义后台角色管理Dao
- * Created by echonanguo on 2020/2/2.
+ * Created by echonanguo on 2025/2/2.
  */
 public interface UmsRoleDao {
     /**

@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * SpringDoc相关配置
- * Created by echonanguo on 2024/3/5.
+ * Created by echonanguo on 2025/3/5.
  */
 @Configuration
 public class SpringDocConfig implements WebMvcConfigurer {

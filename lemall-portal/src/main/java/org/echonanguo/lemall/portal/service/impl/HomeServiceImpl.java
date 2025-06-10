@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * 首页内容管理Service实现类
- * Created by echonanguo on 2019/1/28.
+ * Created by echonanguo on 2025/1/28.
  */
 @Service
 public class HomeServiceImpl implements HomeService {
@@ -57,7 +57,7 @@ public class HomeServiceImpl implements HomeService {
 
     @Override
     public List<PmsProduct> recommendProductList(Integer pageSize, Integer pageNum) {
-        // TODO: 2019/1/29 暂时默认推荐所有商品
+        // TODO: 2025/1/29 暂时默认推荐所有商品
         PageHelper.startPage(pageNum,pageSize);
         PmsProductExample example = new PmsProductExample();
         example.createCriteria()

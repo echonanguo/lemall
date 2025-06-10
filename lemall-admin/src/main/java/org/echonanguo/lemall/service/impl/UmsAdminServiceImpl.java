@@ -33,7 +33,7 @@ import java.util.*;
 
 /**
  * UmsAdminService实现类
- * Created by echonanguo on 2018/4/26.
+ * Created by echonanguo on 2025/4/26.
  */
 @Service
 public class UmsAdminServiceImpl implements UmsAdminService {
@@ -54,7 +54,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(username);
         List<UmsAdmin> adminList = adminMapper.selectByExample(example);
-        if (adminList != null && adminList.size() > 0) {
+        if (adminList != null && !adminList.isEmpty()) {
             return adminList.get(0);
         }
         return null;
@@ -70,7 +70,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(umsAdmin.getUsername());
         List<UmsAdmin> umsAdminList = adminMapper.selectByExample(example);
-        if (umsAdminList.size() > 0) {
+        if (!umsAdminList.isEmpty()) {
             return null;
         }
         //将密码进行加密操作

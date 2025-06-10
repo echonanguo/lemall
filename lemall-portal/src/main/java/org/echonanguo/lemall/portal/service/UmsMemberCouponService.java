@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 用户优惠券管理Service
- * Created by echonanguo on 2018/8/29.
+ * Created by echonanguo on 2025/8/29.
  */
 public interface UmsMemberCouponService {
     /**

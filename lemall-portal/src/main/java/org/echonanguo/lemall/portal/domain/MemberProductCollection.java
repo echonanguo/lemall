@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * 用户收藏的商品
- * Created by echonanguo on 2018/8/2.
+ * Created by echonanguo on 2025/8/2.
  */
 public class MemberProductCollection {
     @Id

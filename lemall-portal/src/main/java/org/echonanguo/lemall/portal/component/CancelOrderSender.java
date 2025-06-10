@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 取消订单消息的发出者
- * Created by echonanguo on 2018/9/14.
+ * Created by echonanguo on 2025/9/14.
  */
 @Component
 public class CancelOrderSender {

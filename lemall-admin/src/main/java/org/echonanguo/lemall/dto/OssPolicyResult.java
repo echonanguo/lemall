@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 获取OSS上传文件授权返回结果
- * Created by echonanguo on 2018/5/17.
+ * Created by echonanguo on 2025/5/17.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

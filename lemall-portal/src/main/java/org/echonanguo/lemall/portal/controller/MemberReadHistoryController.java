@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * 会员商品浏览记录管理Controller
- * Created by echonanguo on 2018/8/3.
+ * Created by echonanguo on 2025/8/3.
  */
 @Controller
 @Tag(name = "MemberReadHistoryController", description = "会员商品浏览记录管理")

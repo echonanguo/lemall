@@ -84,3 +84,13 @@
 7. 选择对应视图即可查看相应日志
 
    ![](https://raw.githubusercontent.com/echonanguo/lemall/refs/heads/master/doc/img/Snipaste_2025-06-01_01-26-25.png)
+
+## 前端
+
+### 管理
+
+[lemall-admin-web](https://github.com/echonanguo/lemall-admin-web)
+
+### 用户
+
+[lemall-app-web](https://github.com/echonanguo/lemall-app-web)

@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 生成订单时传入的参数
- * Created by echonanguo on 2018/8/30.
+ * Created by echonanguo on 2025/8/30.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

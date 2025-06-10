@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * 首页人气推荐管理Controller
- * Created by echonanguo on 2018/11/6.
+ * Created by echonanguo on 2025/11/6.
  */
 @Controller
 @Tag(name = "SmsHomeRecommendProductController", description = "首页人气推荐管理")

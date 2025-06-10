@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 首页人气推荐管理Service
- * Created by echonanguo on 2018/11/7.
+ * Created by echonanguo on 2025/11/7.
  */
 public interface SmsHomeRecommendProductService {
     /**

@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * 后台资源管理Service
- * Created by echonanguo on 2020/2/2.
+ * Created by echonanguo on 2025/2/2.
  */
 public interface UmsResourceService {
     /**

@@ -15,7 +15,7 @@ import java.util.*;
 
 /**
  * 后台资源管理Service实现类
- * Created by echonanguo on 2020/2/2.
+ * Created by echonanguo on 2025/2/2.
  */
 @Service
 public class UmsResourceServiceImpl implements UmsResourceService {

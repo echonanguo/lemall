@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 产品查询参数
- * Created by echonanguo on 2018/4/27.
+ * Created by echonanguo on 2025/4/27.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

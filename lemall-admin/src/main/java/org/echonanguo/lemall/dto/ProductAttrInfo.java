@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 商品分类对应属性信息
- * Created by echonanguo on 2018/5/23.
+ * Created by echonanguo on 2025/5/23.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

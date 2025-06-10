@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * 会员优惠券管理Controller
- * Created by echonanguo on 2018/8/29.
+ * Created by echonanguo on 2025/8/29.
  */
 @Controller
 @Tag(name = "UmsMemberCouponController", description = "用户优惠券管理")

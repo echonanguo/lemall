@@ -5,7 +5,7 @@ import org.echonanguo.lemall.model.UmsResource;
 
 /**
  * 后台用户缓存操作类
- * Created by echonanguo on 2020/3/13.
+ * Created by echonanguo on 2025/3/13.
  */
 public interface UmsAdminCacheService {
     /**

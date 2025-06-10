@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @auther echonanguo
  * @description 支付宝请求客户端配置
- * @date 2023/9/8
+ * @date 2025/9/8
  * @github https://github.com/echonanguo
  */
 @Configuration

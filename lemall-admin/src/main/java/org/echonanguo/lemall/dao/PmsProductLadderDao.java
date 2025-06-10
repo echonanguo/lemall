@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 自定义会员阶梯价格Dao
- * Created by echonanguo on 2018/4/26.
+ * Created by echonanguo on 2025/4/26.
  */
 public interface PmsProductLadderDao {
     /**

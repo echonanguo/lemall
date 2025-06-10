@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * 订单详情信息
- * Created by echonanguo on 2018/10/11.
+ * Created by echonanguo on 2025/10/11.
  */
 public class OmsOrderDetail extends OmsOrder {
     @Getter

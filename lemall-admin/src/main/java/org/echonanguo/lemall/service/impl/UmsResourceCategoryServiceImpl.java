@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * 后台资源分类管理Service实现类
- * Created by echonanguo on 2020/2/5.
+ * Created by echonanguo on 2025/2/5.
  */
 @Service
 public class UmsResourceCategoryServiceImpl implements UmsResourceCategoryService {

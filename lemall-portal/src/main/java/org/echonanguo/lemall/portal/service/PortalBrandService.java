@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 前台品牌管理Service
- * Created by echonanguo on 2020/5/15.
+ * Created by echonanguo on 2025/5/15.
  */
 public interface PortalBrandService {
     /**

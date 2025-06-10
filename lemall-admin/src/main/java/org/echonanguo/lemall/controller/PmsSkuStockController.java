@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * sku库存Controller
- * Created by echonanguo on 2018/4/27.
+ * Created by echonanguo on 2025/4/27.
  */
 @Controller
 @Tag(name = "PmsSkuStockController", description = "sku商品库存管理")

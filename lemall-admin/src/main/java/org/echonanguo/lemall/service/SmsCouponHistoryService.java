@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 优惠券领取记录管理Service
- * Created by echonanguo on 2018/11/6.
+ * Created by echonanguo on 2025/11/6.
  */
 public interface SmsCouponHistoryService {
     /**

@@ -5,7 +5,7 @@ import jakarta.validation.ConstraintValidatorContext;
 
 /**
  * 状态标记校验器
- * Created by echonanguo on 2018/4/26.
+ * Created by echonanguo on 2025/4/26.
  */
 public class FlagValidatorClass implements ConstraintValidator<FlagValidator,Integer> {
     private String[] values;

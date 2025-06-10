@@ -9,7 +9,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 /**
  * 商品属性参数
- * Created by echonanguo on 2018/4/26.
+ * Created by echonanguo on 2025/4/26.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
