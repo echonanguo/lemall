@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.echonanguo.lemall.dao.OmsOrderDao">
-    <resultMap id="orderDetailResultMap" type="org.echonanguo.lemall.dto.OmsOrderDetail" extends="org.echonanguo.lemall.mapper.OmsOrderMapper.BaseResultMap">
-        <collection property="orderItemList" resultMap="org.echonanguo.lemall.mapper.OmsOrderItemMapper.BaseResultMap" columnPrefix="item_"/>
-        <collection property="historyList" resultMap="org.echonanguo.lemall.mapper.OmsOrderOperateHistoryMapper.BaseResultMap" columnPrefix="history_"/>
+<mapper namespace="org.echonanguo.lemall.admin.dao.OmsOrderDao">
+    <resultMap id="orderDetailResultMap" type="org.echonanguo.lemall.admin.dto.OmsOrderDetail" extends="org.echonanguo.lemall.mbg.mapper.OmsOrderMapper.BaseResultMap">
+        <collection property="orderItemList" resultMap="org.echonanguo.lemall.mbg.mapper.OmsOrderItemMapper.BaseResultMap" columnPrefix="item_"/>
+        <collection property="historyList" resultMap="org.echonanguo.lemall.mbg.mapper.OmsOrderOperateHistoryMapper.BaseResultMap" columnPrefix="history_"/>
     </resultMap>
-    <select id="getList" resultMap="org.echonanguo.lemall.mapper.OmsOrderMapper.BaseResultMap">
+    <select id="getList" resultMap="org.echonanguo.lemall.mbg.mapper.OmsOrderMapper.BaseResultMap">
         SELECT *
         FROM
         oms_order

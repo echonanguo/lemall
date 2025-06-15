@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.portal.service;
 
-import org.echonanguo.lemall.model.UmsMemberReceiveAddress;
+import org.echonanguo.lemall.mbg.model.UmsMemberReceiveAddress;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

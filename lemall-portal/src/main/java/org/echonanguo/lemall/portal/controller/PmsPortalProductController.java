@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
 import org.echonanguo.lemall.portal.domain.PmsPortalProductDetail;
 import org.echonanguo.lemall.portal.domain.PmsProductCategoryNode;
 import org.echonanguo.lemall.portal.service.PmsPortalProductService;

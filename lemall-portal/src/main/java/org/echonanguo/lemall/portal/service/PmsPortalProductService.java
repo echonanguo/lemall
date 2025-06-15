@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.portal.service;
 
-import org.echonanguo.lemall.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
 import org.echonanguo.lemall.portal.domain.PmsPortalProductDetail;
 import org.echonanguo.lemall.portal.domain.PmsProductCategoryNode;
 

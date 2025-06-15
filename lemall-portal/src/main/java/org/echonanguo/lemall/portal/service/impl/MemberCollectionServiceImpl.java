@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.portal.service.impl;
 
-import org.echonanguo.lemall.model.UmsMember;
+import org.echonanguo.lemall.mbg.model.UmsMember;
 import org.echonanguo.lemall.portal.domain.MemberProductCollection;
 import org.echonanguo.lemall.portal.repository.MemberProductCollectionRepository;
 import org.echonanguo.lemall.portal.service.MemberCollectionService;

@@ -3,18 +3,18 @@
 <mapper namespace="org.echonanguo.lemall.portal.dao.PortalProductDao">
     <resultMap id="cartProductMap" type="org.echonanguo.lemall.portal.domain.CartProduct" autoMapping="true">
         <id column="id" jdbcType="BIGINT" property="id" />
-        <collection property="productAttributeList" columnPrefix="attr_" resultMap="org.echonanguo.lemall.mapper.PmsProductAttributeMapper.BaseResultMap">
+        <collection property="productAttributeList" columnPrefix="attr_" resultMap="org.echonanguo.lemall.mbg.mapper.PmsProductAttributeMapper.BaseResultMap">
         </collection>
-        <collection property="skuStockList" columnPrefix="sku_" resultMap="org.echonanguo.lemall.mapper.PmsSkuStockMapper.BaseResultMap">
+        <collection property="skuStockList" columnPrefix="sku_" resultMap="org.echonanguo.lemall.mbg.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
     </resultMap>
-    <resultMap id="promotionProductMap" type="org.echonanguo.lemall.portal.domain.PromotionProduct" extends="org.echonanguo.lemall.mapper.PmsProductMapper.BaseResultMap">
+    <resultMap id="promotionProductMap" type="org.echonanguo.lemall.portal.domain.PromotionProduct" extends="org.echonanguo.lemall.mbg.mapper.PmsProductMapper.BaseResultMap">
         <id column="id" jdbcType="BIGINT" property="id" />
-        <collection property="skuStockList" columnPrefix="sku_" resultMap="org.echonanguo.lemall.mapper.PmsSkuStockMapper.BaseResultMap">
+        <collection property="skuStockList" columnPrefix="sku_" resultMap="org.echonanguo.lemall.mbg.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
-        <collection property="productLadderList" columnPrefix="ladder_" resultMap="org.echonanguo.lemall.mapper.PmsProductLadderMapper.BaseResultMap">
+        <collection property="productLadderList" columnPrefix="ladder_" resultMap="org.echonanguo.lemall.mbg.mapper.PmsProductLadderMapper.BaseResultMap">
         </collection>
-        <collection property="productFullReductionList" columnPrefix="full_" resultMap="org.echonanguo.lemall.mapper.PmsProductFullReductionMapper.BaseResultMap">
+        <collection property="productFullReductionList" columnPrefix="full_" resultMap="org.echonanguo.lemall.mbg.mapper.PmsProductFullReductionMapper.BaseResultMap">
         </collection>
     </resultMap>
     <select id="getCartProduct" resultMap="cartProductMap">
@@ -72,7 +72,7 @@
             #{id}
         </foreach>
     </select>
-    <select id="getAvailableCouponList" resultMap="org.echonanguo.lemall.mapper.SmsCouponMapper.BaseResultMap">
+    <select id="getAvailableCouponList" resultMap="org.echonanguo.lemall.mbg.mapper.SmsCouponMapper.BaseResultMap">
         SELECT *
         FROM sms_coupon
         WHERE use_type = 0

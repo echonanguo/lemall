@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.echonanguo.lemall.dao.SmsCouponDao">
-    <resultMap id="couponItemParam" type="org.echonanguo.lemall.dto.SmsCouponParam" extends="org.echonanguo.lemall.mapper.SmsCouponMapper.BaseResultMap">
-        <collection property="productRelationList" columnPrefix="cpr_" resultMap="org.echonanguo.lemall.mapper.SmsCouponProductRelationMapper.BaseResultMap">
+<mapper namespace="org.echonanguo.lemall.admin.dao.SmsCouponDao">
+    <resultMap id="couponItemParam" type="org.echonanguo.lemall.admin.dto.SmsCouponParam" extends="org.echonanguo.lemall.mbg.mapper.SmsCouponMapper.BaseResultMap">
+        <collection property="productRelationList" columnPrefix="cpr_" resultMap="org.echonanguo.lemall.mbg.mapper.SmsCouponProductRelationMapper.BaseResultMap">
         </collection>
-        <collection property="productCategoryRelationList" columnPrefix="cpcr_" resultMap="org.echonanguo.lemall.mapper.SmsCouponProductCategoryRelationMapper.BaseResultMap">
+        <collection property="productCategoryRelationList" columnPrefix="cpcr_" resultMap="org.echonanguo.lemall.mbg.mapper.SmsCouponProductCategoryRelationMapper.BaseResultMap">
         </collection>
     </resultMap>
     <select id="getItem" resultMap="couponItemParam">

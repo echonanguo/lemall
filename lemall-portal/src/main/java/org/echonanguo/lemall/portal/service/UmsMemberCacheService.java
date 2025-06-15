@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.portal.service;
 
-import org.echonanguo.lemall.model.UmsMember;
+import org.echonanguo.lemall.mbg.model.UmsMember;
 
 /**
  * 会员信息缓存业务类

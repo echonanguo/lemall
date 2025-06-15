@@ -2,7 +2,7 @@ package org.echonanguo.lemall.portal.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.echonanguo.lemall.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
 
 import java.math.BigDecimal;
 

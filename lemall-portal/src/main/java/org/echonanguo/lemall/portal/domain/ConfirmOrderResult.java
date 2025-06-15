@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.portal.domain;
 
-import org.echonanguo.lemall.model.UmsIntegrationConsumeSetting;
-import org.echonanguo.lemall.model.UmsMemberReceiveAddress;
+import org.echonanguo.lemall.mbg.model.UmsIntegrationConsumeSetting;
+import org.echonanguo.lemall.mbg.model.UmsMemberReceiveAddress;
 
 import java.math.BigDecimal;
 import java.util.List;

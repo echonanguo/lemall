@@ -1,9 +1,9 @@
 package org.echonanguo.lemall.portal.domain;
 
-import org.echonanguo.lemall.model.SmsCoupon;
-import org.echonanguo.lemall.model.SmsCouponHistory;
-import org.echonanguo.lemall.model.SmsCouponProductCategoryRelation;
-import org.echonanguo.lemall.model.SmsCouponProductRelation;
+import org.echonanguo.lemall.mbg.model.SmsCoupon;
+import org.echonanguo.lemall.mbg.model.SmsCouponHistory;
+import org.echonanguo.lemall.mbg.model.SmsCouponProductCategoryRelation;
+import org.echonanguo.lemall.mbg.model.SmsCouponProductRelation;
 
 import java.util.List;
 

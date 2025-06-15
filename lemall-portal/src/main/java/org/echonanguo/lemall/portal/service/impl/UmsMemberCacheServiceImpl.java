@@ -2,7 +2,7 @@ package org.echonanguo.lemall.portal.service.impl;
 
 import org.echonanguo.lemall.common.annotation.CacheException;
 import org.echonanguo.lemall.common.service.RedisService;
-import org.echonanguo.lemall.model.UmsMember;
+import org.echonanguo.lemall.mbg.model.UmsMember;
 import org.echonanguo.lemall.portal.service.UmsMemberCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -2,11 +2,11 @@ package org.echonanguo.lemall.portal.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import org.echonanguo.lemall.common.api.CommonPage;
-import org.echonanguo.lemall.mapper.PmsBrandMapper;
-import org.echonanguo.lemall.mapper.PmsProductMapper;
-import org.echonanguo.lemall.model.PmsBrand;
-import org.echonanguo.lemall.model.PmsProduct;
-import org.echonanguo.lemall.model.PmsProductExample;
+import org.echonanguo.lemall.mbg.mapper.PmsBrandMapper;
+import org.echonanguo.lemall.mbg.mapper.PmsProductMapper;
+import org.echonanguo.lemall.mbg.model.PmsBrand;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.PmsProductExample;
 import org.echonanguo.lemall.portal.dao.HomeDao;
 import org.echonanguo.lemall.portal.service.PortalBrandService;
 import org.springframework.beans.factory.annotation.Autowired;

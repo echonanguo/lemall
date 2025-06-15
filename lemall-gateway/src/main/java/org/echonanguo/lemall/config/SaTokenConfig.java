@@ -19,8 +19,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.PathContainer;
-import org.springframework.util.AntPathMatcher;
-import org.springframework.util.PathMatcher;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.util.pattern.PathPattern;
 import org.springframework.web.util.pattern.PathPatternParser;
@@ -28,7 +26,6 @@ import org.springframework.web.util.pattern.PathPatternParser;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -102,14 +99,14 @@ public class SaTokenConfig {
     /**
      * 自定义异常处理
      */
-    private CommonResult handleException(Throwable e) {
+    private CommonResult<?> handleException(Throwable e) {
         //设置错误返回格式为JSON
         ServerWebExchange exchange = SaReactorSyncHolder.getContext();
         HttpHeaders headers = exchange.getResponse().getHeaders();
         headers.set("Content-Type", "application/json; charset=utf-8");
         headers.set("Access-Control-Allow-Origin", "*");
         headers.set("Cache-Control","no-cache");
-        CommonResult result = null;
+        CommonResult<?> result = null;
         if(e instanceof NotLoginException){
             result = CommonResult.unauthorized(null);
         }else if(e instanceof NotPermissionException){

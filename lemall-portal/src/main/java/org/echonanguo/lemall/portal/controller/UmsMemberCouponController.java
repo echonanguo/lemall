@@ -6,8 +6,8 @@ import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.model.SmsCoupon;
-import org.echonanguo.lemall.model.SmsCouponHistory;
+import org.echonanguo.lemall.mbg.model.SmsCoupon;
+import org.echonanguo.lemall.mbg.model.SmsCouponHistory;
 import org.echonanguo.lemall.portal.domain.CartPromotionItem;
 import org.echonanguo.lemall.portal.domain.SmsCouponHistoryDetail;
 import org.echonanguo.lemall.portal.service.OmsCartItemService;
@@ -37,7 +37,7 @@ public class UmsMemberCouponController {
     @Operation(summary = "领取指定优惠券")
     @RequestMapping(value = "/add/{couponId}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult add(@PathVariable Long couponId) {
+    public CommonResult<?> add(@PathVariable Long couponId) {
         memberCouponService.add(couponId);
         return CommonResult.success(null,"领取成功");
     }

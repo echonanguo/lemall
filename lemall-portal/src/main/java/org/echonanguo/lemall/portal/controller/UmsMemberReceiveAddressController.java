@@ -3,7 +3,7 @@ package org.echonanguo.lemall.portal.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.model.UmsMemberReceiveAddress;
+import org.echonanguo.lemall.mbg.model.UmsMemberReceiveAddress;
 import org.echonanguo.lemall.portal.service.UmsMemberReceiveAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,7 +25,7 @@ public class UmsMemberReceiveAddressController {
     @Operation(summary = "添加收货地址")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult add(@RequestBody UmsMemberReceiveAddress address) {
+    public CommonResult<?> add(@RequestBody UmsMemberReceiveAddress address) {
         int count = memberReceiveAddressService.add(address);
         if (count > 0) {
             return CommonResult.success(count);
@@ -36,7 +36,7 @@ public class UmsMemberReceiveAddressController {
     @Operation(summary = "删除收货地址")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult delete(@PathVariable Long id) {
+    public CommonResult<?> delete(@PathVariable Long id) {
         int count = memberReceiveAddressService.delete(id);
         if (count > 0) {
             return CommonResult.success(count);
@@ -47,7 +47,7 @@ public class UmsMemberReceiveAddressController {
     @Operation(summary = "修改收货地址")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult update(@PathVariable Long id, @RequestBody UmsMemberReceiveAddress address) {
+    public CommonResult<?> update(@PathVariable Long id, @RequestBody UmsMemberReceiveAddress address) {
         int count = memberReceiveAddressService.update(id, address);
         if (count > 0) {
             return CommonResult.success(count);

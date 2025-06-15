@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.portal.service;
 
-import org.echonanguo.lemall.model.OmsCartItem;
+import org.echonanguo.lemall.mbg.model.OmsCartItem;
 import org.echonanguo.lemall.portal.domain.CartPromotionItem;
 
 import java.util.List;

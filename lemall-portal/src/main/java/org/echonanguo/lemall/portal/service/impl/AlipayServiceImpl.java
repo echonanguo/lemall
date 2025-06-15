@@ -10,7 +10,7 @@ import com.alipay.api.request.AlipayTradeQueryRequest;
 import com.alipay.api.request.AlipayTradeWapPayRequest;
 import com.alipay.api.response.AlipayTradeQueryResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.echonanguo.lemall.mapper.OmsOrderMapper;
+import org.echonanguo.lemall.mbg.mapper.OmsOrderMapper;
 import org.echonanguo.lemall.portal.config.AlipayConfig;
 import org.echonanguo.lemall.portal.domain.AliPayParam;
 import org.echonanguo.lemall.portal.service.AlipayService;

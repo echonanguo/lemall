@@ -2,8 +2,8 @@ package org.echonanguo.lemall.portal.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import org.echonanguo.lemall.common.exception.Asserts;
-import org.echonanguo.lemall.mapper.*;
-import org.echonanguo.lemall.model.*;
+import org.echonanguo.lemall.mbg.mapper.*;
+import org.echonanguo.lemall.mbg.model.*;
 import org.echonanguo.lemall.portal.dao.SmsCouponHistoryDao;
 import org.echonanguo.lemall.portal.domain.CartPromotionItem;
 import org.echonanguo.lemall.portal.domain.SmsCouponHistoryDetail;

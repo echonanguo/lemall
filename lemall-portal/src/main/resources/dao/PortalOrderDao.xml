@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.echonanguo.lemall.portal.dao.PortalOrderDao">
     <resultMap id="orderDetailMap" type="org.echonanguo.lemall.portal.domain.OmsOrderDetail"
-               extends="org.echonanguo.lemall.mapper.OmsOrderMapper.BaseResultMap">
+               extends="org.echonanguo.lemall.mbg.mapper.OmsOrderMapper.BaseResultMap">
         <collection property="orderItemList" columnPrefix="ot_"
-                    resultMap="org.echonanguo.lemall.mapper.OmsOrderItemMapper.BaseResultMap">
+                    resultMap="org.echonanguo.lemall.mbg.mapper.OmsOrderItemMapper.BaseResultMap">
         </collection>
     </resultMap>
     <select id="getDetail" resultMap="orderDetailMap">

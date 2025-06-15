@@ -1,9 +1,9 @@
 package org.echonanguo.lemall.portal.service.impl;
 
-import org.echonanguo.lemall.mapper.UmsMemberReceiveAddressMapper;
-import org.echonanguo.lemall.model.UmsMember;
-import org.echonanguo.lemall.model.UmsMemberReceiveAddress;
-import org.echonanguo.lemall.model.UmsMemberReceiveAddressExample;
+import org.echonanguo.lemall.mbg.mapper.UmsMemberReceiveAddressMapper;
+import org.echonanguo.lemall.mbg.model.UmsMember;
+import org.echonanguo.lemall.mbg.model.UmsMemberReceiveAddress;
+import org.echonanguo.lemall.mbg.model.UmsMemberReceiveAddressExample;
 import org.echonanguo.lemall.portal.service.UmsMemberReceiveAddressService;
 import org.echonanguo.lemall.portal.service.UmsMemberService;
 import org.springframework.beans.factory.annotation.Autowired;

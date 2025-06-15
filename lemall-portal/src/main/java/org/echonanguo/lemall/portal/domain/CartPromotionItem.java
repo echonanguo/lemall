@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.portal.domain;
 
-import org.echonanguo.lemall.model.OmsCartItem;
+import org.echonanguo.lemall.mbg.model.OmsCartItem;
 
 import java.math.BigDecimal;
 

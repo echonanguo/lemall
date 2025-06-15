@@ -1,9 +1,9 @@
 package org.echonanguo.lemall.portal.domain;
 
-import org.echonanguo.lemall.model.PmsProduct;
-import org.echonanguo.lemall.model.PmsProductFullReduction;
-import org.echonanguo.lemall.model.PmsProductLadder;
-import org.echonanguo.lemall.model.PmsSkuStock;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.PmsProductFullReduction;
+import org.echonanguo.lemall.mbg.model.PmsProductLadder;
+import org.echonanguo.lemall.mbg.model.PmsSkuStock;
 
 import java.util.List;
 

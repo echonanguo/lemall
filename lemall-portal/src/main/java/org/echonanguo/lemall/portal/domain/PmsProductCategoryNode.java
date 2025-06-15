@@ -2,7 +2,7 @@ package org.echonanguo.lemall.portal.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.echonanguo.lemall.model.PmsProductCategory;
+import org.echonanguo.lemall.mbg.model.PmsProductCategory;
 
 import java.util.List;
 

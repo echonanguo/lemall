@@ -10,6 +10,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan({"org.echonanguo.lemall.mapper","org.echonanguo.lemall.portal.dao"})
+@MapperScan({"org.echonanguo.lemall.mbg.mapper","org.echonanguo.lemall.portal.dao"})
 public class MyBatisConfig {
 }

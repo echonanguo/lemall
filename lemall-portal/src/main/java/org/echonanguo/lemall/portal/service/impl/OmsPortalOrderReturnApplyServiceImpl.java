@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.portal.service.impl;
 
-import org.echonanguo.lemall.mapper.OmsOrderReturnApplyMapper;
-import org.echonanguo.lemall.model.OmsOrderReturnApply;
+import org.echonanguo.lemall.mbg.mapper.OmsOrderReturnApplyMapper;
+import org.echonanguo.lemall.mbg.model.OmsOrderReturnApply;
 import org.echonanguo.lemall.portal.domain.OmsOrderReturnApplyParam;
 import org.echonanguo.lemall.portal.service.OmsPortalOrderReturnApplyService;
 import org.springframework.beans.BeanUtils;

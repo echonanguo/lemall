@@ -1,9 +1,9 @@
 package org.echonanguo.lemall.portal.service.impl;
 
-import org.echonanguo.lemall.model.OmsCartItem;
-import org.echonanguo.lemall.model.PmsProductFullReduction;
-import org.echonanguo.lemall.model.PmsProductLadder;
-import org.echonanguo.lemall.model.PmsSkuStock;
+import org.echonanguo.lemall.mbg.model.OmsCartItem;
+import org.echonanguo.lemall.mbg.model.PmsProductFullReduction;
+import org.echonanguo.lemall.mbg.model.PmsProductLadder;
+import org.echonanguo.lemall.mbg.model.PmsSkuStock;
 import org.echonanguo.lemall.portal.dao.PortalProductDao;
 import org.echonanguo.lemall.portal.domain.CartPromotionItem;
 import org.echonanguo.lemall.portal.domain.PromotionProduct;

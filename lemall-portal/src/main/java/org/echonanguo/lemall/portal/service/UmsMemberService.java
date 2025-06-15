@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.portal.service;
 
 import cn.dev33.satoken.stp.SaTokenInfo;
-import org.echonanguo.lemall.model.UmsMember;
+import org.echonanguo.lemall.mbg.model.UmsMember;
 import org.springframework.transaction.annotation.Transactional;
 
 /**

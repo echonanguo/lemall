@@ -1,8 +1,8 @@
 package org.echonanguo.lemall.portal.service;
 
 import org.echonanguo.lemall.common.api.CommonPage;
-import org.echonanguo.lemall.model.PmsBrand;
-import org.echonanguo.lemall.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.PmsBrand;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
 
 import java.util.List;
 

@@ -2,10 +2,10 @@ package org.echonanguo.lemall.portal.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.echonanguo.lemall.model.CmsSubject;
-import org.echonanguo.lemall.model.PmsBrand;
-import org.echonanguo.lemall.model.PmsProduct;
-import org.echonanguo.lemall.model.SmsHomeAdvertise;
+import org.echonanguo.lemall.mbg.model.CmsSubject;
+import org.echonanguo.lemall.mbg.model.PmsBrand;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.SmsHomeAdvertise;
 
 import java.util.List;
 

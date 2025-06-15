@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.portal.dao;
 
 import org.apache.ibatis.annotations.Param;
-import org.echonanguo.lemall.model.SmsCoupon;
+import org.echonanguo.lemall.mbg.model.SmsCoupon;
 import org.echonanguo.lemall.portal.domain.SmsCouponHistoryDetail;
 
 import java.util.List;

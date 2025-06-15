@@ -1,10 +1,10 @@
 package org.echonanguo.lemall.portal.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import org.echonanguo.lemall.mapper.OmsCartItemMapper;
-import org.echonanguo.lemall.model.OmsCartItem;
-import org.echonanguo.lemall.model.OmsCartItemExample;
-import org.echonanguo.lemall.model.UmsMember;
+import org.echonanguo.lemall.mbg.mapper.OmsCartItemMapper;
+import org.echonanguo.lemall.mbg.model.OmsCartItem;
+import org.echonanguo.lemall.mbg.model.OmsCartItemExample;
+import org.echonanguo.lemall.mbg.model.UmsMember;
 import org.echonanguo.lemall.portal.dao.PortalProductDao;
 import org.echonanguo.lemall.portal.domain.CartProduct;
 import org.echonanguo.lemall.portal.domain.CartPromotionItem;

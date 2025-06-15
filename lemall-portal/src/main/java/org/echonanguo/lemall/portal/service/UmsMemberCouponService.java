@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.portal.service;
 
-import org.echonanguo.lemall.model.SmsCoupon;
-import org.echonanguo.lemall.model.SmsCouponHistory;
+import org.echonanguo.lemall.mbg.model.SmsCoupon;
+import org.echonanguo.lemall.mbg.model.SmsCouponHistory;
 import org.echonanguo.lemall.portal.domain.CartPromotionItem;
 import org.echonanguo.lemall.portal.domain.SmsCouponHistoryDetail;
 import org.springframework.transaction.annotation.Transactional;

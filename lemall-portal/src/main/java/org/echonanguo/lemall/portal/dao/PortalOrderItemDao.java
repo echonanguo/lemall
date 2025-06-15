@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.portal.dao;
 
 import org.apache.ibatis.annotations.Param;
-import org.echonanguo.lemall.model.OmsOrderItem;
+import org.echonanguo.lemall.mbg.model.OmsOrderItem;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.portal.domain;
 
-import org.echonanguo.lemall.model.OmsOrder;
-import org.echonanguo.lemall.model.OmsOrderItem;
+import org.echonanguo.lemall.mbg.model.OmsOrder;
+import org.echonanguo.lemall.mbg.model.OmsOrderItem;
 
 import java.util.List;
 

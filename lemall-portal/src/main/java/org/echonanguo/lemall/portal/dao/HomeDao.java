@@ -1,9 +1,9 @@
 package org.echonanguo.lemall.portal.dao;
 
 import org.apache.ibatis.annotations.Param;
-import org.echonanguo.lemall.model.CmsSubject;
-import org.echonanguo.lemall.model.PmsBrand;
-import org.echonanguo.lemall.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.CmsSubject;
+import org.echonanguo.lemall.mbg.model.PmsBrand;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
 import org.echonanguo.lemall.portal.domain.FlashPromotionProduct;
 
 import java.util.List;

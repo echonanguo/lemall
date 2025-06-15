@@ -1,8 +1,8 @@
 package org.echonanguo.lemall.portal.service;
 
-import org.echonanguo.lemall.model.CmsSubject;
-import org.echonanguo.lemall.model.PmsProduct;
-import org.echonanguo.lemall.model.PmsProductCategory;
+import org.echonanguo.lemall.mbg.model.CmsSubject;
+import org.echonanguo.lemall.mbg.model.PmsProduct;
+import org.echonanguo.lemall.mbg.model.PmsProductCategory;
 import org.echonanguo.lemall.portal.domain.HomeContentResult;
 
 import java.util.List;
