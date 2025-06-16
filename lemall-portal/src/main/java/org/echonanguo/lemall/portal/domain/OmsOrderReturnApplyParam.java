@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 /**
  * 申请退货参数
- * Created by echonanguo on 2025/10/17.
+ * Created by echonanguo on 2025/4/26.
  */
 @Getter
 @Setter

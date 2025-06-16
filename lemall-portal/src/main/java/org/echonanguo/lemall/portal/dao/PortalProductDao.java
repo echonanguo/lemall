@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 前台系统自定义商品Dao
- * Created by echonanguo on 2025/8/2.
+ * Created by echonanguo on 2025/4/21.
  */
 public interface PortalProductDao {
     CartProduct getCartProduct(@Param("id") Long id);

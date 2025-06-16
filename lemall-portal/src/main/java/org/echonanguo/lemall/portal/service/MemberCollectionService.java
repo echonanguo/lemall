@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 
 /**
  * 会员收藏Service
- * Created by echonanguo on 2025/8/2.
+ * Created by echonanguo on 2025/4/21.
  */
 public interface MemberCollectionService {
     int add(MemberProductCollection productCollection);

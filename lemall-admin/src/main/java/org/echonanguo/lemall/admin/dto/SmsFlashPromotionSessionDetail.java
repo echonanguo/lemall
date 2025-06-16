@@ -7,7 +7,7 @@ import lombok.Setter;
 
 /**
  * 包含商品数量的场次信息
- * Created by echonanguo on 2025/11/19.
+ * Created by echonanguo on 2025/4/26.
  */
 public class SmsFlashPromotionSessionDetail extends SmsFlashPromotionSession {
     @Setter

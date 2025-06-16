@@ -4,7 +4,7 @@ import org.echonanguo.lemall.mbg.model.UmsAdmin;
 
 /**
  * 后台用户缓存操作类
- * Created by echonanguo on 2025/3/13.
+ * Created by echonanguo on 2025/4/22.
  */
 public interface UmsAdminCacheService {
     /**

@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 自定义限时购商品关系管理Dao
- * Created by echonanguo on 2025/11/16.
+ * Created by echonanguo on 2025/4/26.
  */
 public interface SmsFlashPromotionProductRelationDao {
     /**

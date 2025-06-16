@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * 首页品牌推荐管理Controller
- * Created by echonanguo on 2025/5/15.
+ * Created by echonanguo on 2025/4/26.
  */
 @Controller
 @Tag(name = "PortalBrandController", description = "前台品牌管理")

@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * oss上传管理Service
- * Created by echonanguo on 2025/5/17.
+ * Created by echonanguo on 2025/4/26.
  */
 public interface OssService {
     /**

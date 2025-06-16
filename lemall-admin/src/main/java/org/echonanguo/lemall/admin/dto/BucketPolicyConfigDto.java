@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Minio Bucket访问策略配置
- * Created by echonanguo on 2025/8/11.
+ * Created by echonanguo on 2025/1/22.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

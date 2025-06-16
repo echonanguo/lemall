@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 
 /**
  * 会员关注Service
- * Created by echonanguo on 2025/8/2.
+ * Created by echonanguo on 2025/4/21.
  */
 public interface MemberAttentionService {
     /**

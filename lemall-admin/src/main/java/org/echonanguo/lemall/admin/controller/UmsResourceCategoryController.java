@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * 后台资源分类管理Controller
- * Created by echonanguo on 2025/2/5.
+ * Created by echonanguo on 2025/4/22.
  */
 @Controller
 @Tag(name = "UmsResourceCategoryController", description = "后台资源分类管理")

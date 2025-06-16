@@ -4,7 +4,7 @@ import org.echonanguo.lemall.mbg.model.OmsOrderSetting;
 
 /**
  * 订单设置Service
- * Created by echonanguo on 2025/10/16.
+ * Created by echonanguo on 2025/4/26.
  */
 public interface OmsOrderSettingService {
     /**

@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 商品分类，包含子分类
- * Created by echonanguo on 2025/4/6.
+ * Created by echonanguo on 2025/4/22.
  */
 @Getter
 @Setter

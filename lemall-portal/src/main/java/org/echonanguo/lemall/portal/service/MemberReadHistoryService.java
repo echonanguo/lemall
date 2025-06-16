@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 会员浏览记录管理Service
- * Created by echonanguo on 2025/8/3.
+ * Created by echonanguo on 2025/1/22.
  */
 public interface MemberReadHistoryService {
     /**

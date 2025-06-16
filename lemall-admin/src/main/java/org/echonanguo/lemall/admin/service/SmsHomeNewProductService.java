@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 首页新品管理Service
- * Created by echonanguo on 2025/11/6.
+ * Created by echonanguo on 2025/4/26.
  */
 public interface SmsHomeNewProductService {
     /**

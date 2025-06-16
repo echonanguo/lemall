@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 取消订单消息的处理者
- * Created by echonanguo on 2025/9/14.
+ * Created by echonanguo on 2025/1/22.
  */
 @Component
 @RabbitListener(queues = "lemall.order.cancel")

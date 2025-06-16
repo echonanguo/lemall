@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 会员收藏Service实现类
- * Created by echonanguo on 2025/8/2.
+ * Created by echonanguo on 2025/4/21.
  */
 @Service
 public class MemberCollectionServiceImpl implements MemberCollectionService {

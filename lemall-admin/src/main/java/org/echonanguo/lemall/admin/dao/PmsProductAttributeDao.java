@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 自定义商品属性Dao
- * Created by echonanguo on 2025/5/23.
+ * Created by echonanguo on 2025/4/26.
  */
 public interface PmsProductAttributeDao {
     /**

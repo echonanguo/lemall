@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * 前台品牌管理Service实现类
- * Created by echonanguo on 2025/5/15.
+ * Created by echonanguo on 2025/4/26.
  */
 @Service
 public class PortalBrandServiceImpl implements PortalBrandService {

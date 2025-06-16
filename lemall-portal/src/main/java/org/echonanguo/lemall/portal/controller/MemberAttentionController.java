@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 会员关注品牌管理Controller
- * Created by echonanguo on 2025/8/2.
+ * Created by echonanguo on 2025/4/21.
  */
 @Controller
 @Tag(name = "MemberAttentionController", description = "会员关注品牌管理")

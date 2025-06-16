@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * 会员浏览记录管理Service实现类
- * Created by echonanguo on 2025/8/3.
+ * Created by echonanguo on 2025/1/22.
  */
 @Service
 public class MemberReadHistoryServiceImpl implements MemberReadHistoryService {

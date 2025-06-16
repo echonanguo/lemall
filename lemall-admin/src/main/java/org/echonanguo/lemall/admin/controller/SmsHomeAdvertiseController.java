@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * 首页轮播广告管理Controller
- * Created by echonanguo on 2025/11/7.
+ * Created by echonanguo on 2025/4/26.
  */
 @Controller
 @Tag(name = "SmsHomeAdvertiseController", description = "首页轮播广告管理")

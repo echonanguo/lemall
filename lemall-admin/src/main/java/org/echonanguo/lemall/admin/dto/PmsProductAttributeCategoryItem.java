@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 包含有分类下属性的dto
- * Created by echonanguo on 2025/5/24.
+ * Created by echonanguo on 2025/4/26.
  */
 public class PmsProductAttributeCategoryItem extends PmsProductAttributeCategory {
     @Getter

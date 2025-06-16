@@ -5,7 +5,7 @@ import org.echonanguo.lemall.mbg.model.OmsCartItem;
 import java.math.BigDecimal;
 
 /**
- * Created by echonanguo on 2025/8/27.
+ * Created by echonanguo on 2025/4/21.
  * 购物车中促销信息的封装
  */
 public class CartPromotionItem extends OmsCartItem{

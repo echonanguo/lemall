@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 会员关注的品牌
- * Created by echonanguo on 2025/8/2.
+ * Created by echonanguo on 2025/4/21.
  */
 @Document
 public class MemberBrandAttention {

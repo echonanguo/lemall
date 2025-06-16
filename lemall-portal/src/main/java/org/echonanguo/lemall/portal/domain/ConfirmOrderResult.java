@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 确认单信息封装
- * Created by echonanguo on 2025/8/30.
+ * Created by echonanguo on 2025/1/22.
  */
 public class ConfirmOrderResult {
     //包含优惠信息的购物车信息

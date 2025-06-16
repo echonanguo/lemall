@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 购物车中选择规格的商品信息
- * Created by echonanguo on 2025/8/2.
+ * Created by echonanguo on 2025/4/21.
  */
 public class CartProduct extends PmsProduct {
     private List<PmsProductAttribute> productAttributeList;

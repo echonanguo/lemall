@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * 限时购和商品关系管理Controller
- * Created by echonanguo on 2025/11/16.
+ * Created by echonanguo on 2025/4/26.
  */
 @Controller
 @Tag(name = "SmsFlashPromotionProductRelationController", description = "限时购和商品关系管理")

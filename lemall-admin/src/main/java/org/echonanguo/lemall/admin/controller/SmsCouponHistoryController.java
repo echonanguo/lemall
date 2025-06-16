@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * 优惠券领取记录管理Controller
- * Created by echonanguo on 2025/11/6.
+ * Created by echonanguo on 2025/4/26.
  */
 @Controller
 @Tag(name = "SmsCouponHistoryController", description = "优惠券领取记录管理")

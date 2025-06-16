@@ -6,7 +6,7 @@ import org.echonanguo.lemall.portal.domain.CartPromotionItem;
 import java.util.List;
 
 /**
- * Created by echonanguo on 2025/8/27.
+ * Created by echonanguo on 2025/4/21.
  * 促销管理Service
  */
 public interface OmsPromotionService {
