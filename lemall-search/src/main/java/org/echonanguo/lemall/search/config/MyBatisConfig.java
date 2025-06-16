@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @date:  2025/6/1 上午12:33
  */
 @Configuration
-@MapperScan({"org.echonanguo.lemall.mapper","org.echonanguo.lemall.search.dao"})
+@MapperScan({"org.echonanguo.lemall.mbg.mapper","org.echonanguo.lemall.search.dao"})
 public class MyBatisConfig {
 }
