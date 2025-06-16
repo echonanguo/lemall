@@ -4,8 +4,8 @@ import org.echonanguo.lemall.admin.dto.OmsOrderReturnApplyResult;
 import org.echonanguo.lemall.admin.dto.OmsReturnApplyQueryParam;
 import org.echonanguo.lemall.admin.dto.OmsUpdateStatusParam;
 import org.echonanguo.lemall.admin.service.OmsOrderReturnApplyService;
-import org.echonanguo.lemall.admin.common.api.CommonPage;
-import org.echonanguo.lemall.admin.common.api.CommonResult;
+import org.echonanguo.lemall.common.api.CommonPage;
+import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.mbg.model.OmsOrderReturnApply;
 
 import io.swagger.v3.oas.annotations.Operation;

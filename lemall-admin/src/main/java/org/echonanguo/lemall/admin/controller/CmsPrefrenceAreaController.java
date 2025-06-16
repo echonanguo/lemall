@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.admin.controller;
 
 import org.echonanguo.lemall.admin.service.CmsPrefrenceAreaService;
-import org.echonanguo.lemall.admin.common.api.CommonResult;
+import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.mbg.model.CmsPrefrenceArea;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.config;
 
-import org.echonanguo.lemall.admin.common.config.BaseRedisConfig;
+import org.echonanguo.lemall.common.config.BaseRedisConfig;
 import org.springframework.context.annotation.Configuration;
 
 /*

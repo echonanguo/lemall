@@ -3,8 +3,8 @@ package org.echonanguo.lemall.admin.controller;
 import org.echonanguo.lemall.admin.dto.PmsProductCategoryParam;
 import org.echonanguo.lemall.admin.dto.PmsProductCategoryWithChildrenItem;
 import org.echonanguo.lemall.admin.service.PmsProductCategoryService;
-import org.echonanguo.lemall.admin.common.api.CommonPage;
-import org.echonanguo.lemall.admin.common.api.CommonResult;
+import org.echonanguo.lemall.common.api.CommonPage;
+import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.mbg.model.PmsProductCategory;
 
 import io.swagger.v3.oas.annotations.Operation;

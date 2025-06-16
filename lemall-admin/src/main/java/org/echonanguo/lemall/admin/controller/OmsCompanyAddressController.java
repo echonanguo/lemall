@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.controller;
 
-import org.echonanguo.lemall.admin.common.api.CommonResult;
+import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.mbg.model.OmsCompanyAddress;
 import org.echonanguo.lemall.admin.service.OmsCompanyAddressService;
 

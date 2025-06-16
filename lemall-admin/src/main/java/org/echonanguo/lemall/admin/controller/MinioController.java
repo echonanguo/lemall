@@ -3,7 +3,7 @@ package org.echonanguo.lemall.admin.controller;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.json.JSONUtil;
 import org.echonanguo.lemall.admin.dto.MinioUploadDto;
-import org.echonanguo.lemall.admin.common.api.CommonResult;
+import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.admin.dto.BucketPolicyConfigDto;
 import io.minio.*;
 

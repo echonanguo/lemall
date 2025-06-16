@@ -2,8 +2,8 @@ package org.echonanguo.lemall.admin.controller;
 
 import org.echonanguo.lemall.admin.dto.PmsProductAttributeParam;
 import org.echonanguo.lemall.admin.dto.ProductAttrInfo;
-import org.echonanguo.lemall.admin.common.api.CommonPage;
-import org.echonanguo.lemall.admin.common.api.CommonResult;
+import org.echonanguo.lemall.common.api.CommonPage;
+import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.mbg.model.PmsProductAttribute;
 import org.echonanguo.lemall.admin.service.PmsProductAttributeService;
 import io.swagger.v3.oas.annotations.Operation;

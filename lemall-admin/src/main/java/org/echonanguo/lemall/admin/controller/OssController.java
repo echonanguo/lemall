@@ -3,7 +3,7 @@ package org.echonanguo.lemall.admin.controller;
 
 import org.echonanguo.lemall.admin.dto.OssPolicyResult;
 import org.echonanguo.lemall.admin.service.impl.OssServiceImpl;
-import org.echonanguo.lemall.admin.common.api.CommonResult;
+import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.admin.dto.OssCallbackResult;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -4,8 +4,8 @@ import org.echonanguo.lemall.admin.dto.PmsProductParam;
 import org.echonanguo.lemall.admin.dto.PmsProductQueryParam;
 import org.echonanguo.lemall.admin.dto.PmsProductResult;
 import org.echonanguo.lemall.admin.service.PmsProductService;
-import org.echonanguo.lemall.admin.common.api.CommonPage;
-import org.echonanguo.lemall.admin.common.api.CommonResult;
+import org.echonanguo.lemall.common.api.CommonPage;
+import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.mbg.model.PmsProduct;
 
 import io.swagger.v3.oas.annotations.Operation;
