@@ -1,5 +1,7 @@
 package org.echonanguo.lemall.admin.controller;
 
+import cn.hutool.core.date.DateTime;
+import lombok.extern.slf4j.Slf4j;
 import org.echonanguo.lemall.admin.service.UmsMenuService;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
@@ -18,6 +20,7 @@ import java.util.List;
  * 后台菜单管理Controller
  * Created by echonanguo on 2025/4/22.
  */
+@Slf4j
 @Controller
 @Tag(name = "UmsMenuController", description = "后台菜单管理")
 @RequestMapping("/menu")
@@ -86,6 +89,7 @@ public class UmsMenuController {
     @ResponseBody
     public CommonResult<List<UmsMenuNode>> treeList() {
         List<UmsMenuNode> list = menuService.treeList();
+        log.error("日志系统测试----{}", DateTime.now());
         return CommonResult.success(list);
     }
 
