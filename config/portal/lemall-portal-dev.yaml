@@ -21,7 +21,7 @@ spring:
 logging:
   level:
     root: info
-    org.nanguo.lemall: debug
+    org.echonanguo.lemall: debug
 logstash:
   host: nanguo.io
 alipay:
