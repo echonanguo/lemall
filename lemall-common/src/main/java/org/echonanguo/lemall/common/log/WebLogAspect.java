@@ -40,7 +40,7 @@ import java.util.Map;
 public class WebLogAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebLogAspect.class);
 
-    @Pointcut("execution(public * org.echonanguo.lemall.controller.*.*(..))||execution(public * org.echonanguo.lemall.*.controller.*.*(..))")
+    @Pointcut("execution(public * org.echonanguo.lemall..controller.*.*(..))")
     public void webLog() {
     }
 
