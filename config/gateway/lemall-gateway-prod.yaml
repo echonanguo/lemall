@@ -1,7 +1,7 @@
 spring:
   data:
     redis:
-      host: redis # Redis服务器地址
+      host: localhost # Redis服务器地址
       database: 0 # Redis数据库索引（默认为0）
       port: 6379 # Redis服务器连接端口
       password: #不设置密码
@@ -12,4 +12,4 @@ logging:
     root: info
     org.echonanguo.lemall: info
 logstash:
-  host: logstash
+  host: localhost
