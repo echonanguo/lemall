@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.dao;
 
-import org.echonanguo.lemall.mbg.model.PmsProductFullReduction;
+import org.echonanguo.lemall.common.model.PmsProductFullReduction;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.service;
 
-import org.echonanguo.lemall.mbg.model.UmsAdmin;
+import org.echonanguo.lemall.common.model.UmsAdmin;
 
 /**
  * 后台用户缓存操作类

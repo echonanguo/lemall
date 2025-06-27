@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.dao;
 
-import org.echonanguo.lemall.mbg.model.PmsMemberPrice;
+import org.echonanguo.lemall.common.model.PmsMemberPrice;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

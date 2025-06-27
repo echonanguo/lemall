@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.admin.dto;
 
-import org.echonanguo.lemall.mbg.model.PmsProductAttribute;
-import org.echonanguo.lemall.mbg.model.PmsProductAttributeCategory;
+import org.echonanguo.lemall.common.model.PmsProductAttribute;
+import org.echonanguo.lemall.common.model.PmsProductAttributeCategory;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

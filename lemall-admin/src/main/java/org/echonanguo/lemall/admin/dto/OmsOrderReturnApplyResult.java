@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.admin.dto;
 
-import org.echonanguo.lemall.mbg.model.OmsCompanyAddress;
-import org.echonanguo.lemall.mbg.model.OmsOrderReturnApply;
+import org.echonanguo.lemall.common.model.OmsCompanyAddress;
+import org.echonanguo.lemall.common.model.OmsOrderReturnApply;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

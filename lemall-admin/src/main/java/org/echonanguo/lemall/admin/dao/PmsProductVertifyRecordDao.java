@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.dao;
 
-import org.echonanguo.lemall.mbg.model.PmsProductVertifyRecord;
+import org.echonanguo.lemall.common.model.PmsProductVertifyRecord;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

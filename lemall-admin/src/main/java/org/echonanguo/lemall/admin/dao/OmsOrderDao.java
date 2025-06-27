@@ -3,7 +3,7 @@ package org.echonanguo.lemall.admin.dao;
 import org.echonanguo.lemall.admin.dto.OmsOrderQueryParam;
 import org.echonanguo.lemall.admin.dto.OmsOrderDeliveryParam;
 import org.echonanguo.lemall.admin.dto.OmsOrderDetail;
-import org.echonanguo.lemall.mbg.model.OmsOrder;
+import org.echonanguo.lemall.common.model.OmsOrder;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

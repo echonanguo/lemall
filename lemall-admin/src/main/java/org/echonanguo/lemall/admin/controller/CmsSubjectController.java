@@ -2,7 +2,7 @@ package org.echonanguo.lemall.admin.controller;
 
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.mbg.model.CmsSubject;
+import org.echonanguo.lemall.common.model.CmsSubject;
 import org.echonanguo.lemall.admin.service.CmsSubjectService;
 
 import io.swagger.v3.oas.annotations.Operation;

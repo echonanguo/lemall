@@ -1,17 +1,18 @@
 package org.echonanguo.lemall.admin.service;
 
-import org.echonanguo.lemall.mbg.model.UmsMenu;
-import org.echonanguo.lemall.mbg.model.UmsResource;
-import org.echonanguo.lemall.mbg.model.UmsRole;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import org.echonanguo.lemall.common.model.UmsMenu;
+import org.echonanguo.lemall.common.model.UmsResource;
+import org.echonanguo.lemall.common.model.UmsRole;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 /**
  * 后台角色管理Service
  * Created by echonanguo on 2025/1/22.
  */
-public interface UmsRoleService {
+public interface UmsRoleService extends IService<UmsRole>{
     /**
      * 添加角色
      */
@@ -63,4 +64,5 @@ public interface UmsRoleService {
      */
     @Transactional
     int allocResource(Long roleId, List<Long> resourceIds);
+
 }

@@ -1,8 +1,8 @@
 package org.echonanguo.lemall.admin.dao;
 
-import org.echonanguo.lemall.mbg.model.UmsAdminRoleRelation;
-import org.echonanguo.lemall.mbg.model.UmsResource;
-import org.echonanguo.lemall.mbg.model.UmsRole;
+import org.echonanguo.lemall.common.model.UmsAdminRoleRelation;
+import org.echonanguo.lemall.common.model.UmsResource;
+import org.echonanguo.lemall.common.model.UmsRole;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

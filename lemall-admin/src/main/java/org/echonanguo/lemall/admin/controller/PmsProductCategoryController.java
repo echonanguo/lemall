@@ -5,7 +5,7 @@ import org.echonanguo.lemall.admin.dto.PmsProductCategoryWithChildrenItem;
 import org.echonanguo.lemall.admin.service.PmsProductCategoryService;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.mbg.model.PmsProductCategory;
+import org.echonanguo.lemall.common.model.PmsProductCategory;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

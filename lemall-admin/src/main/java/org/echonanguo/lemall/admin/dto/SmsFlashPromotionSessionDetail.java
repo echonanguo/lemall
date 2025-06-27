@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.dto;
 
-import org.echonanguo.lemall.mbg.model.SmsFlashPromotionSession;
+import org.echonanguo.lemall.common.model.SmsFlashPromotionSession;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

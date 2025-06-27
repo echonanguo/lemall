@@ -4,7 +4,7 @@ import org.echonanguo.lemall.admin.dto.PmsProductAttributeParam;
 import org.echonanguo.lemall.admin.dto.ProductAttrInfo;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.mbg.model.PmsProductAttribute;
+import org.echonanguo.lemall.common.model.PmsProductAttribute;
 import org.echonanguo.lemall.admin.service.PmsProductAttributeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

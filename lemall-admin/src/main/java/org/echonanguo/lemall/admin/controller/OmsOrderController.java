@@ -3,8 +3,7 @@ package org.echonanguo.lemall.admin.controller;
 import org.echonanguo.lemall.admin.dto.*;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.admin.dto.*;
-import org.echonanguo.lemall.mbg.model.OmsOrder;
+import org.echonanguo.lemall.common.model.OmsOrder;
 import org.echonanguo.lemall.admin.service.OmsOrderService;
 
 import io.swagger.v3.oas.annotations.Operation;

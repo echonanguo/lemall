@@ -5,9 +5,10 @@ import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
 import com.aliyun.oss.model.PolicyConditions;
-import org.echonanguo.lemall.admin.dto.OssPolicyResult;
+import jakarta.servlet.http.HttpServletRequest;
 import org.echonanguo.lemall.admin.dto.OssCallbackParam;
 import org.echonanguo.lemall.admin.dto.OssCallbackResult;
+import org.echonanguo.lemall.admin.dto.OssPolicyResult;
 import org.echonanguo.lemall.admin.service.OssService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import jakarta.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

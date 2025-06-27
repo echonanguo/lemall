@@ -1,34 +1,29 @@
 package org.echonanguo.lemall.admin.service.impl;
 
-import com.github.pagehelper.PageHelper;
-import org.echonanguo.lemall.admin.dao.UmsRoleDao;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import org.echonanguo.lemall.admin.mapper.UmsRoleMenuRelationMapper;
+import org.echonanguo.lemall.admin.mapper.UmsRoleResourceRelationMapper;
 import org.echonanguo.lemall.admin.service.UmsResourceService;
 import org.echonanguo.lemall.admin.service.UmsRoleService;
-import org.echonanguo.lemall.mbg.mapper.UmsRoleMapper;
-import org.echonanguo.lemall.mbg.mapper.UmsRoleMenuRelationMapper;
-import org.echonanguo.lemall.mbg.mapper.UmsRoleResourceRelationMapper;
-import org.echonanguo.lemall.mbg.model.*;
+import org.echonanguo.lemall.common.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.echonanguo.lemall.admin.mapper.UmsRoleMapper;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.List;
-
 /**
  * 后台角色管理Service实现类
  * Created by echonanguo on 2025/1/22.
  */
 @Service
-public class UmsRoleServiceImpl implements UmsRoleService {
-    @Autowired
-    private UmsRoleMapper roleMapper;
+public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> implements UmsRoleService {
     @Autowired
     private UmsRoleMenuRelationMapper roleMenuRelationMapper;
     @Autowired
     private UmsRoleResourceRelationMapper roleResourceRelationMapper;
-    @Autowired
-    private UmsRoleDao roleDao;
     @Autowired
     private UmsResourceService resourceService;
     @Override
@@ -36,20 +31,20 @@ public class UmsRoleServiceImpl implements UmsRoleService {
         role.setCreateTime(new Date());
         role.setAdminCount(0);
         role.setSort(0);
-        return roleMapper.insert(role);
+        return baseMapper.insert(role);
     }
 
     @Override
     public int update(Long id, UmsRole role) {
         role.setId(id);
-        return roleMapper.updateByPrimaryKeySelective(role);
+        return baseMapper.updateById(role);
     }
 
     @Override
     public int delete(List<Long> ids) {
-        UmsRoleExample example = new UmsRoleExample();
-        example.createCriteria().andIdIn(ids);
-        int count = roleMapper.deleteByExample(example);
+        int count = baseMapper.delete(Wrappers.lambdaQuery(UmsRole.class)
+                .in(UmsRole::getId, ids)
+        );
         resourceService.initPathResourceMap();
         return count;
     }

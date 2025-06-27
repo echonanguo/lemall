@@ -1,9 +1,11 @@
 package org.echonanguo.lemall.admin.service;
-
 import cn.dev33.satoken.stp.SaTokenInfo;
+import com.baomidou.mybatisplus.extension.service.IService;
 import org.echonanguo.lemall.admin.dto.UmsAdminParam;
 import org.echonanguo.lemall.admin.dto.UpdateAdminPasswordParam;
-import org.echonanguo.lemall.mbg.model.*;
+import org.echonanguo.lemall.common.model.UmsAdmin;
+import org.echonanguo.lemall.common.model.UmsResource;
+import org.echonanguo.lemall.common.model.UmsRole;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
  * 后台管理员Service
  * Created by echonanguo on 2025/4/26.
  */
-public interface UmsAdminService {
+public interface UmsAdminService extends IService<UmsAdmin>{
     /**
      * 根据用户名获取后台管理员
      */
@@ -80,4 +82,5 @@ public interface UmsAdminService {
      * 登出操作
      */
     void logout();
+
 }

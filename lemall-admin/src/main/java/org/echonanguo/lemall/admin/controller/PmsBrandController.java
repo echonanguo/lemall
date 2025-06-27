@@ -4,7 +4,7 @@ import org.echonanguo.lemall.admin.dto.PmsBrandParam;
 import org.echonanguo.lemall.admin.service.PmsBrandService;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.mbg.model.PmsBrand;
+import org.echonanguo.lemall.common.model.PmsBrand;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

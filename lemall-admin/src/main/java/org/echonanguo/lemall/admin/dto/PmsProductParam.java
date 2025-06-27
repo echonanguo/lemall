@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.dto;
 
-import org.echonanguo.lemall.mbg.model.*;
+import org.echonanguo.lemall.common.model.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

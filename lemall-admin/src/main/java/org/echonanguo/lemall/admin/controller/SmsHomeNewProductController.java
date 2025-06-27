@@ -3,7 +3,7 @@ package org.echonanguo.lemall.admin.controller;
 import org.echonanguo.lemall.admin.service.SmsHomeNewProductService;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.mbg.model.SmsHomeNewProduct;
+import org.echonanguo.lemall.common.model.SmsHomeNewProduct;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

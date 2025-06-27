@@ -2,7 +2,7 @@ package org.echonanguo.lemall.admin.controller;
 
 import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.admin.dto.SmsFlashPromotionSessionDetail;
-import org.echonanguo.lemall.mbg.model.SmsFlashPromotionSession;
+import org.echonanguo.lemall.common.model.SmsFlashPromotionSession;
 import org.echonanguo.lemall.admin.service.SmsFlashPromotionSessionService;
 
 import io.swagger.v3.oas.annotations.Operation;

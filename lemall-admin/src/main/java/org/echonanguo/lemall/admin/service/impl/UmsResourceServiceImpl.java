@@ -1,26 +1,25 @@
 package org.echonanguo.lemall.admin.service.impl;
 
 import cn.hutool.core.util.StrUtil;
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.echonanguo.lemall.admin.service.UmsResourceService;
 import org.echonanguo.lemall.common.constant.AuthConstant;
+import org.echonanguo.lemall.common.model.UmsResource;
 import org.echonanguo.lemall.common.service.RedisService;
-import org.echonanguo.lemall.mbg.mapper.UmsResourceMapper;
-import org.echonanguo.lemall.mbg.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.echonanguo.lemall.admin.mapper.UmsResourceMapper;
 
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
-/**
- * 后台资源管理Service实现类
- * Created by echonanguo on 2025/4/22.
- */
 @Service
-public class UmsResourceServiceImpl implements UmsResourceService {
-    @Autowired
-    private UmsResourceMapper resourceMapper;
+public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper, UmsResource> implements UmsResourceService {
     @Autowired
     private RedisService redisService;
     @Value("${spring.application.name}")
@@ -28,7 +27,7 @@ public class UmsResourceServiceImpl implements UmsResourceService {
     @Override
     public int create(UmsResource umsResource) {
         umsResource.setCreateTime(new Date());
-        int count = resourceMapper.insert(umsResource);
+        int count = baseMapper.insert(umsResource);
         initPathResourceMap();
         return count;
     }
@@ -36,49 +35,54 @@ public class UmsResourceServiceImpl implements UmsResourceService {
     @Override
     public int update(Long id, UmsResource umsResource) {
         umsResource.setId(id);
-        int count = resourceMapper.updateByPrimaryKeySelective(umsResource);
+        int count = baseMapper.updateById(umsResource);
         initPathResourceMap();
         return count;
     }
 
     @Override
     public UmsResource getItem(Long id) {
-        return resourceMapper.selectByPrimaryKey(id);
+        return baseMapper.selectById(id);
     }
 
     @Override
     public int delete(Long id) {
-        int count = resourceMapper.deleteByPrimaryKey(id);
+        int count = baseMapper.deleteById(id);
         initPathResourceMap();
         return count;
     }
 
     @Override
     public List<UmsResource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
-        UmsResourceExample example = new UmsResourceExample();
-        UmsResourceExample.Criteria criteria = example.createCriteria();
-        if(categoryId!=null){
-            criteria.andCategoryIdEqualTo(categoryId);
+        // 创建分页对象
+        Page<UmsResource> page = new Page<>(pageNum, pageSize);
+
+        // 构建查询条件
+        LambdaQueryWrapper<UmsResource> queryWrapper = new LambdaQueryWrapper<>();
+
+        if (categoryId != null) {
+            queryWrapper.eq(UmsResource::getCategoryId, categoryId);
         }
-        if(StrUtil.isNotEmpty(nameKeyword)){
-            criteria.andNameLike('%'+nameKeyword+'%');
+        if (StrUtil.isNotEmpty(nameKeyword)) {
+            queryWrapper.like(UmsResource::getName, nameKeyword);
         }
-        if(StrUtil.isNotEmpty(urlKeyword)){
-            criteria.andUrlLike('%'+urlKeyword+'%');
+        if (StrUtil.isNotEmpty(urlKeyword)) {
+            queryWrapper.like(UmsResource::getUrl, urlKeyword);
         }
-        return resourceMapper.selectByExample(example);
+
+        // 执行分页查询
+        return baseMapper.selectPage(page, queryWrapper).getRecords();
     }
 
     @Override
     public List<UmsResource> listAll() {
-        return resourceMapper.selectByExample(new UmsResourceExample());
+        return baseMapper.selectList(null);
     }
 
     @Override
     public Map<String,String> initPathResourceMap() {
         Map<String,String> pathResourceMap = new TreeMap<>();
-        List<UmsResource> resourceList = resourceMapper.selectByExample(new UmsResourceExample());
+        List<UmsResource> resourceList = baseMapper.selectList(null);
         for (UmsResource resource : resourceList) {
             pathResourceMap.put("/"+applicationName+resource.getUrl(),resource.getId()+":"+resource.getName());
         }

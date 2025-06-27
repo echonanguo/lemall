@@ -1,8 +1,8 @@
 package org.echonanguo.lemall.admin.service.impl;
 
 import org.echonanguo.lemall.admin.service.UmsAdminCacheService;
+import org.echonanguo.lemall.common.model.UmsAdmin;
 import org.echonanguo.lemall.common.service.RedisService;
-import org.echonanguo.lemall.mbg.model.UmsAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

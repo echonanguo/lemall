@@ -6,7 +6,7 @@ import org.echonanguo.lemall.admin.dto.SmsCouponParam;
 import org.echonanguo.lemall.admin.service.SmsCouponService;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.mbg.model.SmsCoupon;
+import org.echonanguo.lemall.common.model.SmsCoupon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

@@ -1,8 +1,8 @@
 package org.echonanguo.lemall.admin.dto;
 
-import org.echonanguo.lemall.mbg.model.SmsCoupon;
-import org.echonanguo.lemall.mbg.model.SmsCouponProductCategoryRelation;
-import org.echonanguo.lemall.mbg.model.SmsCouponProductRelation;
+import org.echonanguo.lemall.common.model.SmsCoupon;
+import org.echonanguo.lemall.common.model.SmsCouponProductCategoryRelation;
+import org.echonanguo.lemall.common.model.SmsCouponProductRelation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

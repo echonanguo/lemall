@@ -6,7 +6,7 @@ import org.echonanguo.lemall.admin.dto.PmsProductResult;
 import org.echonanguo.lemall.admin.service.PmsProductService;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.mbg.model.PmsProduct;
+import org.echonanguo.lemall.common.model.PmsProduct;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

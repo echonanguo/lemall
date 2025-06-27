@@ -1,6 +1,6 @@
 package org.echonanguo.lemall.admin.dao;
 
-import org.echonanguo.lemall.mbg.model.SmsCouponProductRelation;
+import org.echonanguo.lemall.common.model.SmsCouponProductRelation;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

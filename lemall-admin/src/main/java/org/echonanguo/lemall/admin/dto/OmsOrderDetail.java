@@ -1,8 +1,8 @@
 package org.echonanguo.lemall.admin.dto;
 
-import org.echonanguo.lemall.mbg.model.OmsOrder;
-import org.echonanguo.lemall.mbg.model.OmsOrderItem;
-import org.echonanguo.lemall.mbg.model.OmsOrderOperateHistory;
+import org.echonanguo.lemall.common.model.OmsOrder;
+import org.echonanguo.lemall.common.model.OmsOrderItem;
+import org.echonanguo.lemall.common.model.OmsOrderOperateHistory;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

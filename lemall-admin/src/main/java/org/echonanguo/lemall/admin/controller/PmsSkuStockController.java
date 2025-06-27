@@ -2,10 +2,10 @@ package org.echonanguo.lemall.admin.controller;
 
 import org.echonanguo.lemall.admin.service.PmsSkuStockService;
 import org.echonanguo.lemall.common.api.CommonResult;
-import org.echonanguo.lemall.mbg.model.PmsSkuStock;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.echonanguo.lemall.common.model.PmsSkuStock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

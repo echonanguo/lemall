@@ -8,8 +8,8 @@ import org.echonanguo.lemall.admin.service.UmsRoleService;
 import org.echonanguo.lemall.common.api.CommonPage;
 import org.echonanguo.lemall.common.api.CommonResult;
 import org.echonanguo.lemall.admin.dto.UmsAdminParam;
-import org.echonanguo.lemall.mbg.model.UmsAdmin;
-import org.echonanguo.lemall.mbg.model.UmsRole;
+import org.echonanguo.lemall.common.model.UmsAdmin;
+import org.echonanguo.lemall.common.model.UmsRole;
 import org.echonanguo.lemall.admin.service.UmsAdminService;
 
 import io.swagger.v3.oas.annotations.Operation;

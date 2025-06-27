@@ -1,7 +1,7 @@
 package org.echonanguo.lemall.admin.dao;
 
-import org.echonanguo.lemall.mbg.model.UmsMenu;
-import org.echonanguo.lemall.mbg.model.UmsResource;
+import org.echonanguo.lemall.common.model.UmsMenu;
+import org.echonanguo.lemall.common.model.UmsResource;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
