@@ -89,7 +89,6 @@ public class UmsMenuController {
     @ResponseBody
     public CommonResult<List<UmsMenuNode>> treeList() {
         List<UmsMenuNode> list = menuService.treeList();
-        log.error("日志系统测试----{}", DateTime.now());
         return CommonResult.success(list);
     }
 
