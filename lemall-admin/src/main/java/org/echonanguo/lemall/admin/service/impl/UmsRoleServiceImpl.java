@@ -1,6 +1,8 @@
 package org.echonanguo.lemall.admin.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.echonanguo.lemall.admin.mapper.UmsRoleMenuRelationMapper;
 import org.echonanguo.lemall.admin.mapper.UmsRoleResourceRelationMapper;
 import org.echonanguo.lemall.admin.service.UmsResourceService;
@@ -42,7 +44,7 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
 
     @Override
     public int delete(List<Long> ids) {
-        int count = baseMapper.delete(Wrappers.lambdaQuery(UmsRole.class)
+        int count = baseMapper.delete(Wrappers.<UmsRole>lambdaQuery()
                 .in(UmsRole::getId, ids)
         );
         resourceService.initPathResourceMap();
@@ -51,40 +53,46 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
 
     @Override
     public List<UmsRole> list() {
-        return roleMapper.selectByExample(new UmsRoleExample());
+        return baseMapper.selectList(null);
     }
 
     @Override
     public List<UmsRole> list(String keyword, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
-        UmsRoleExample example = new UmsRoleExample();
-        if (!StringUtils.isEmpty(keyword)) {
-            example.createCriteria().andNameLike("%" + keyword + "%");
+        // 创建分页对象
+        Page<UmsRole> page = new Page<>(pageNum, pageSize);
+
+        // 构建查询条件
+        LambdaQueryWrapper<UmsRole> queryWrapper = new LambdaQueryWrapper<>();
+
+        if (StringUtils.hasText(keyword)) {
+            queryWrapper.like(UmsRole::getName, keyword);
         }
-        return roleMapper.selectByExample(example);
+
+        // 执行分页查询
+        return baseMapper.selectPage(page, queryWrapper).getRecords();
     }
 
     @Override
     public List<UmsMenu> getMenuList(Long adminId) {
-        return roleDao.getMenuList(adminId);
+        return baseMapper.getMenuList(adminId);
     }
 
     @Override
     public List<UmsMenu> listMenu(Long roleId) {
-        return roleDao.getMenuListByRoleId(roleId);
+        return baseMapper.getMenuListByRoleId(roleId);
     }
 
     @Override
     public List<UmsResource> listResource(Long roleId) {
-        return roleDao.getResourceListByRoleId(roleId);
+        return baseMapper.getResourceListByRoleId(roleId);
     }
 
     @Override
     public int allocMenu(Long roleId, List<Long> menuIds) {
         //先删除原有关系
-        UmsRoleMenuRelationExample example=new UmsRoleMenuRelationExample();
-        example.createCriteria().andRoleIdEqualTo(roleId);
-        roleMenuRelationMapper.deleteByExample(example);
+        roleMenuRelationMapper.delete(Wrappers.<UmsRoleMenuRelation>lambdaQuery()
+        .eq(UmsRoleMenuRelation::getRoleId, roleId)
+        );
         //批量插入新关系
         for (Long menuId : menuIds) {
             UmsRoleMenuRelation relation = new UmsRoleMenuRelation();
@@ -98,9 +106,9 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
     @Override
     public int allocResource(Long roleId, List<Long> resourceIds) {
         //先删除原有关系
-        UmsRoleResourceRelationExample example=new UmsRoleResourceRelationExample();
-        example.createCriteria().andRoleIdEqualTo(roleId);
-        roleResourceRelationMapper.deleteByExample(example);
+        roleResourceRelationMapper.delete(Wrappers.<UmsRoleResourceRelation>lambdaQuery()
+        .eq(UmsRoleResourceRelation::getRoleId, roleId)
+        );
         //批量插入新关系
         for (Long resourceId : resourceIds) {
             UmsRoleResourceRelation relation = new UmsRoleResourceRelation();
