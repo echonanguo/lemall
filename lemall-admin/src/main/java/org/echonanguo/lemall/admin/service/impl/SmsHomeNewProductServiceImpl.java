@@ -52,7 +52,7 @@ public class SmsHomeNewProductServiceImpl extends ServiceImpl<SmsHomeNewProductM
 
     @Override
     public List<SmsHomeNewProduct> list(String productName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
-        return baseMapper.selectPage(new Page<SmsHomeNewProduct>(pageNum,pageSize),
+        return baseMapper.selectPage(new Page<>(pageNum,pageSize),
                 Wrappers.<SmsHomeNewProduct>lambdaQuery()
                         .like(StringUtils.hasText(productName),SmsHomeNewProduct::getProductName,productName)
                         .eq(recommendStatus != null,SmsHomeNewProduct::getRecommendStatus,recommendStatus)
