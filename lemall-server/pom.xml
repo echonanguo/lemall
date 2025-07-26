@@ -1,12 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>org.nanguo</groupId>
+    <artifactId>lemall</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging> <!-- 修改为pom类型 -->
 
-    <groupId>org.nanguo.lemall</groupId>
-    <artifactId>lemall-server</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <name>lemall-server</name>
+    <description>父聚合模块</description>
 
+    <modules>
+        <module>lemall-app-main</module>
+        <module>lemall-business</module>
+        <module>lemall-core</module>
+        <module>lemall-auth</module>
+    </modules>
 
+    <properties>
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>3.0.2</spring-boot.version>
+        <lemall-core.version>0.0.1</lemall-core.version>
+        <lemall-auth.version>0.0.1</lemall-auth.version>
+        <lemall-module-admin.version>0.0.1</lemall-module-admin.version>
+    </properties>
+
+    <!-- 将依赖管理保留在父POM中 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.nanguo</groupId>
+                <artifactId>lemall-core</artifactId>
+                <version>${lemall-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.nanguo</groupId>
+                <artifactId>lemall-auth</artifactId>
+                <version>${lemall-auth.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.nanguo</groupId>
+                <artifactId>lemall-module-admin</artifactId>
+                <version>${lemall-module-admin.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--使用aliyun的Maven镜像源提升下载速度-->
+    <repositories>
+        <repository>
+            <id>aliyunmaven</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+        <repository>
+            <id>central2</id>
+            <name>central2</name>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+    <!--使用aliyun的镜像源提升插件下载速度-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyunmaven</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>central2</id>
+            <name>central2</name>
+            <url>https://repo1.maven.org/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

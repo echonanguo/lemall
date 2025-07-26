@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.nanguo</groupId>
+        <artifactId>lemall</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>lemall-app-main</artifactId>
+    <name>lemall-app-main</name>
+    <description>主应用模块</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.nanguo</groupId>
+            <artifactId>lemall-module-admin</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>lemall-server-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>org.nanguo.lemall.Application</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
