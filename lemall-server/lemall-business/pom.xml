@@ -27,15 +27,5 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.nanguo</groupId>
-            <artifactId>lemall-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.nanguo</groupId>
-            <artifactId>lemall-auth</artifactId>
-        </dependency>
     </dependencies>
 </project>

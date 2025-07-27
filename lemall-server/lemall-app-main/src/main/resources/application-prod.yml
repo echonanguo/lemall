@@ -1,2 +1,5 @@
 server:
-  port: 8121
+  port: 8080
+# 开启knife4j生产模式
+knife4j:
+  production: true

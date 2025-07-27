@@ -5,7 +5,7 @@ WORKDIR /app
 # 将构建的 JAR 文件复制到容器中
 COPY lemall-app-main/target/*.jar app.jar
 # 暴露应用运行的端口
-EXPOSE 8121
+EXPOSE 8080
 # JVM 参数
 ENV JAVA_OPTS=""
 # 启动应用

@@ -12,4 +12,15 @@
     <artifactId>lemall-module-admin</artifactId>
     <description>后台业务管理模块</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.nanguo</groupId>
+            <artifactId>lemall-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.nanguo</groupId>
+            <artifactId>lemall-auth</artifactId>
+        </dependency>
+    </dependencies>
 </project>

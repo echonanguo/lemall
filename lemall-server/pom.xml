@@ -25,6 +25,7 @@
         <lemall-core.version>0.0.1</lemall-core.version>
         <lemall-auth.version>0.0.1</lemall-auth.version>
         <lemall-module-admin.version>0.0.1</lemall-module-admin.version>
+        <knife4j-openapi3-jakarta-spring-boot-starter.version>4.4.0</knife4j-openapi3-jakarta-spring-boot-starter.version>
     </properties>
 
     <!-- 将依赖管理保留在父POM中 -->
@@ -54,6 +55,11 @@
                 <groupId>org.nanguo</groupId>
                 <artifactId>lemall-module-admin</artifactId>
                 <version>${lemall-module-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j-openapi3-jakarta-spring-boot-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
