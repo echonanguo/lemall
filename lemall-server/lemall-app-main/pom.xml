@@ -16,19 +16,18 @@
     <dependencies>
         <dependency>
             <groupId>org.nanguo</groupId>
-            <artifactId>lemall-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.nanguo</groupId>
             <artifactId>lemall-auth</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.nanguo</groupId>
             <artifactId>lemall-module-admin</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
+        <!--        打包配置-->
         <finalName>lemall-server-${project.version}</finalName>
         <plugins>
             <plugin>
@@ -46,6 +45,20 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <!--lombok处理插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
             </plugin>
         </plugins>
     </build>

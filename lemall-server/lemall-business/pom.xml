@@ -18,14 +18,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.nanguo</groupId>
+            <artifactId>lemall-common</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>org.nanguo</groupId>
+            <artifactId>lemall-auth</artifactId>
         </dependency>
     </dependencies>
 </project>

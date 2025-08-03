@@ -1,9 +1,80 @@
 spring:
+  application:
+    name: lemall
   profiles:
     active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5 #连接池初始化大小
+      min-idle: 10 #最小空闲连接数
+      max-active: 20 #最大连接数
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+      stat-view-servlet: #访问监控网页的登录用户名和密码
+        login-username: druid
+        login-password: druid
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: Authorization
+  # token有效期，单位秒，-1代表永不过期
+  timeout: 604800
+  # token临时有效期 (指定时间内无操作就视为token过期)，单位秒
+  active-timeout: -1
+  # 是否允许同一账号并发登录 (为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为false时每次登录新建一个token)
+  is-share: false
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: false
+  # 是否从cookie中读取token
+  is-read-cookie: false
+  # 是否从head中读取token
+  is-read-header: true
+  # token前缀
+  token-prefix: Bearer
+  # jwt秘钥
+  jwt-secret-key: zhuyuqinzuinb66f
+  # 是否打印banner
+  is-print: false
+springdoc:
+  info:
+    title: Lemall后台系统
+    description: lemall商城项目后端接口文档
+    version: v0.0.1
+    summary: 基于springboot
+    terms-of-service: https://nanguo.org
+    contact:
+      name: nanguo
+      url: https://nanguo.org
+      email: echonanguo@qq.com
+    license:
+      name: Apache 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0.html
+
 knife4j:
   enable: true
   setting:
     language: zh-CN
     swagger-model-name: 实体类列表
     enable-host-text: localhost:8080
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/doc.html"
+      - "/v3/api-docs/swagger-config"
+      - "/*/v3/api-docs/default"
+      - "/*/v3/api-docs"
+      - "/*/swagger-ui/**"
+      - "/webjars/**"
+      - "/lemall-admin/admin/login"
+      - "/lemall-admin/admin/logout"
+lemall:
+  server:
+    prefix:
+      admin: lemall-admin
+      portal: lemall-portal

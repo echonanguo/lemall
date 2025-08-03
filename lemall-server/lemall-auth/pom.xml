@@ -11,4 +11,17 @@
 
     <artifactId>lemall-auth</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.nanguo</groupId>
+            <artifactId>lemall-common</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

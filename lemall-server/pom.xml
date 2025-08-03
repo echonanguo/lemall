@@ -13,7 +13,7 @@
     <modules>
         <module>lemall-app-main</module>
         <module>lemall-business</module>
-        <module>lemall-core</module>
+        <module>lemall-common</module>
         <module>lemall-auth</module>
     </modules>
 
@@ -22,10 +22,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>3.0.2</spring-boot.version>
-        <lemall-core.version>0.0.1</lemall-core.version>
+        <lemall-common.version>0.0.1</lemall-common.version>
         <lemall-auth.version>0.0.1</lemall-auth.version>
         <lemall-module-admin.version>0.0.1</lemall-module-admin.version>
         <knife4j-openapi3-jakarta-spring-boot-starter.version>4.4.0</knife4j-openapi3-jakarta-spring-boot-starter.version>
+        <sa-token-spring-boot3-starter.version>1.37.0</sa-token-spring-boot3-starter.version>
+        <sa-token-jwt.version>1.37.0</sa-token-jwt.version>
+        <sa-token-redis-jackson.version>1.37.0</sa-token-redis-jackson.version>
+        <mybatis-plus-spring-boot3-starter.version>3.5.4</mybatis-plus-spring-boot3-starter.version>
+        <druid-spring-boot-starter.veresion>1.2.18</druid-spring-boot-starter.veresion>
     </properties>
 
     <!-- 将依赖管理保留在父POM中 -->
@@ -41,8 +46,8 @@
 
             <dependency>
                 <groupId>org.nanguo</groupId>
-                <artifactId>lemall-core</artifactId>
-                <version>${lemall-core.version}</version>
+                <artifactId>lemall-common</artifactId>
+                <version>${lemall-common.version}</version>
             </dependency>
 
             <dependency>
@@ -56,11 +61,46 @@
                 <artifactId>lemall-module-admin</artifactId>
                 <version>${lemall-module-admin.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
                 <version>${knife4j-openapi3-jakarta-spring-boot-starter.version}</version>
             </dependency>
+
+            <!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-spring-boot3-starter</artifactId>
+                <version>${sa-token-spring-boot3-starter.version}</version>
+            </dependency>
+
+            <!-- Sa-Token 整合 jwt -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-jwt</artifactId>
+                <version>${sa-token-jwt.version}</version>
+            </dependency>
+
+            <!-- Sa-Token 整合 Redis （使用 jackson 序列化方式） -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-redis-jackson</artifactId>
+                <version>${sa-token-redis-jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus-spring-boot3-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.veresion}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
