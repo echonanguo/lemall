@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.nanguo</groupId>
     <artifactId>lemall</artifactId>
-    <version>0.0.1</version>
+    <version>v0.0.1</version>
     <packaging>pom</packaging> <!-- 修改为pom类型 -->
 
     <name>lemall-server</name>
@@ -22,9 +22,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>3.0.2</spring-boot.version>
-        <lemall-common.version>0.0.1</lemall-common.version>
-        <lemall-auth.version>0.0.1</lemall-auth.version>
-        <lemall-module-admin.version>0.0.1</lemall-module-admin.version>
+        <lemall-common.version>v0.0.1</lemall-common.version>
+        <lemall-auth.version>v0.0.1</lemall-auth.version>
+        <lemall-module-admin.version>v0.0.1</lemall-module-admin.version>
         <knife4j-openapi3-jakarta-spring-boot-starter.version>4.4.0</knife4j-openapi3-jakarta-spring-boot-starter.version>
         <sa-token-spring-boot3-starter.version>1.37.0</sa-token-spring-boot3-starter.version>
         <sa-token-jwt.version>1.37.0</sa-token-jwt.version>

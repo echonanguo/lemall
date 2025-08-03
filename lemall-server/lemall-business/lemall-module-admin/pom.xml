@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.nanguo</groupId>
         <artifactId>lemall-business</artifactId>
-        <version>0.0.1</version>
+        <version>v0.0.1</version>
     </parent>
 
     <artifactId>lemall-module-admin</artifactId>
@@ -17,11 +17,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
