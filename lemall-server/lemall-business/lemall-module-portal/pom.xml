@@ -5,27 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.nanguo</groupId>
-        <artifactId>lemall</artifactId>
+        <artifactId>lemall-business</artifactId>
         <version>v0.0.1</version>
     </parent>
 
-    <artifactId>lemall-business</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>lemall-module-admin</module>
-        <module>lemall-module-portal</module>
-    </modules>
+    <artifactId>lemall-module-portal</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.nanguo</groupId>
-            <artifactId>lemall-common</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.nanguo</groupId>
-            <artifactId>lemall-auth</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

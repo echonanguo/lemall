@@ -20,7 +20,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/lemall-admin/admin")
+@RequestMapping("/lemall-admin/system")
 @Tag(name = "后台用户管理",description = "AdminController")
 public class UmsAdminController {
 
