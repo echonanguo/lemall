@@ -9,7 +9,9 @@ import lombok.RequiredArgsConstructor;
 import org.nanguo.lemall.auth.constant.AuthConstant;
 import org.nanguo.lemall.business.admin.system.entity.UmsAdminLoginLog;
 import org.nanguo.lemall.business.admin.system.entity.UmsResource;
+import org.nanguo.lemall.business.admin.system.entity.UmsRole;
 import org.nanguo.lemall.business.admin.system.mapper.UmsAdminLoginLogMapper;
+import org.nanguo.lemall.business.admin.system.service.UmsAdminCacheService;
 import org.nanguo.lemall.dto.UserDto;
 import org.nanguo.lemall.util.response.BizException;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,8 @@ import java.util.List;
 public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> implements UmsAdminService{
 
     private final UmsAdminLoginLogMapper loginLogMapper;
+    private final UmsAdminCacheService adminCacheService;
+
     @Override
     public SaTokenInfo login(String username, String password) {
         // 1.与数据库核实登录信息是否正确
@@ -60,6 +64,22 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
         // 记录登录日志
         insertLoginLog(umsAdmin);
         return saTokenInfo;
+    }
+
+    @Override
+    public UmsAdmin getCurrentAdmin() {
+        UserDto userDto = (UserDto) StpUtil.getSession().get(AuthConstant.STP_ADMIN_INFO);
+        UmsAdmin admin = adminCacheService.getAdmin(userDto.getId());
+        if (admin == null) {
+            admin = baseMapper.selectById(userDto.getId());
+            adminCacheService.setAdmin(admin);
+        }
+        return admin;
+    }
+
+    @Override
+    public List<UmsRole> getRoleList(Long id) {
+        return baseMapper.getRoleList(id);
     }
 
     /**
