@@ -77,8 +77,8 @@ secure:
       - "/*/v3/api-docs"
       - "/*/swagger-ui/**"
       - "/webjars/**"
-      - "/lemall-admin/system/login"
-      - "/lemall-admin/system/logout"
+      - "/lemall-admin/system/admin/login"
+      - "/lemall-admin/system/admin/logout"
 lemall:
   server:
     prefix:

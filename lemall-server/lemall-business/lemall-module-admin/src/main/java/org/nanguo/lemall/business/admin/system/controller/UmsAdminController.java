@@ -3,6 +3,7 @@ package org.nanguo.lemall.business.admin.system.controller;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.collection.CollUtil;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/lemall-admin/system")
+@RequestMapping("/lemall-admin/system/admin")
 @Tag(name = "后台用户管理",description = "AdminController")
 public class UmsAdminController {
 
@@ -71,4 +72,12 @@ public class UmsAdminController {
         return Result.success(data);
     }
 
+    @Operation(summary = "根据用户名或姓名分页获取用户列表")
+    @GetMapping("/list")
+    public Result<IPage<UmsAdmin>> list(@RequestParam(value = "keyword", required = false) String keyword,
+                                        @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
+                                        @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+        IPage<UmsAdmin> adminList = adminService.list(keyword, pageSize, pageNum);
+        return Result.success(adminList);
+    }
 }

@@ -3,7 +3,9 @@ package org.nanguo.lemall.business.admin.system.service.impl;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.crypto.digest.BCrypt;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.nanguo.lemall.auth.constant.AuthConstant;
@@ -19,6 +21,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.nanguo.lemall.business.admin.system.mapper.UmsAdminMapper;
 import org.nanguo.lemall.business.admin.system.entity.UmsAdmin;
 import org.nanguo.lemall.business.admin.system.service.UmsAdminService;
+import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -28,7 +31,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> implements UmsAdminService{
+public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> implements UmsAdminService {
 
     private final UmsAdminLoginLogMapper loginLogMapper;
     private final UmsAdminCacheService adminCacheService;
@@ -45,7 +48,7 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
         if (!BCrypt.checkpw(password, umsAdmin.getPassword())) {
             throw new BizException("密码不正确！");
         }
-        if(umsAdmin.getStatus()!=1){
+        if (umsAdmin.getStatus() != 1) {
             throw new BizException("该账号已被禁用！");
         }
         // 2.校验成功后，存储登录信息，并返回token
@@ -58,7 +61,7 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
         List<String> permissionList = resourceList.stream().map(item -> item.getId() + ":" + item.getName()).toList();
         userDto.setPermissionList(permissionList);
         // 将用户信息存储到Session中
-        StpUtil.getSession().set(AuthConstant.STP_ADMIN_INFO,userDto);
+        StpUtil.getSession().set(AuthConstant.STP_ADMIN_INFO, userDto);
         // 获取当前登录用户Token信息
         SaTokenInfo saTokenInfo = StpUtil.getTokenInfo();
         // 记录登录日志
@@ -82,11 +85,20 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
         return baseMapper.getRoleList(id);
     }
 
+    @Override
+    public IPage<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum) {
+        return super.page(new Page<>(pageNum, pageSize), Wrappers.<UmsAdmin>lambdaQuery()
+                .like(StringUtils.hasText(keyword), UmsAdmin::getUsername, keyword)
+                .or()
+                .like(StringUtils.hasText(keyword), UmsAdmin::getNickName, keyword)
+        );
+    }
+
     /**
      * 添加登录记录
      */
     private void insertLoginLog(UmsAdmin admin) {
-        if(admin==null) return;
+        if (admin == null) return;
         UmsAdminLoginLog loginLog = new UmsAdminLoginLog();
         loginLog.setAdminId(admin.getId());
         loginLog.setCreateTime(new Date());
