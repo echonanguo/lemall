@@ -6,6 +6,7 @@ import org.nanguo.lemall.util.response.Result;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @RestControllerAdvice
 @Slf4j
@@ -19,6 +20,12 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = BizException.class)
     public Result<?> BizException(BizException e) {
+        log.error(e.getMessage(), e);
+        return Result.fail(e.getMessage());
+    }
+
+    @ExceptionHandler(value = MethodArgumentTypeMismatchException.class)
+    public Result<?> MethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException e) {
         log.error(e.getMessage(), e);
         return Result.fail(e.getMessage());
     }

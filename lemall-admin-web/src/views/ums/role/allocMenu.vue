@@ -66,7 +66,7 @@
           for(let i=0;i<checkedNodes.length;i++){
             let checkedNode = checkedNodes[i];
             checkedMenuIds.add(checkedNode.id);
-            if(checkedNode.parentId!==0){
+            if(checkedNode.parentId==="0"){
               checkedMenuIds.add(checkedNode.parentId);
             }
           }

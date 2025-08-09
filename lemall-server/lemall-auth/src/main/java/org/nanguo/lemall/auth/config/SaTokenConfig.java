@@ -84,6 +84,7 @@ public class SaTokenConfig {
                     }
                 })
                 .setBeforeAuth(obj -> {
+                    //
                     SaHolder.getResponse()
                             // ---------- 设置跨域响应头 ----------
                             // 允许指定域访问跨域资源
@@ -102,7 +103,7 @@ public class SaTokenConfig {
                 })
                 // 异常处理
                 .setError(e -> {
-                    HttpServletResponse response = (HttpServletResponse) SaHolder.getResponse();
+                    HttpServletResponse response = (HttpServletResponse) SaHolder.getResponse().getSource();
                     response.setHeader("Content-Type", "application/json; charset=utf-8");
                     response.setHeader("Access-Control-Allow-Origin", "*");
                     response.setHeader("Cache-Control", "no-cache");

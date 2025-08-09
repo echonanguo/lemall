@@ -72,11 +72,9 @@ secure:
   ignore:
     urls: #配置白名单路径
       - "/doc.html"
-      - "/v3/api-docs/swagger-config"
-      - "/*/v3/api-docs/default"
-      - "/*/v3/api-docs"
-      - "/*/swagger-ui/**"
+      - "/v3/api-docs/**"
       - "/webjars/**"
+      - "/favicon.ico"
       - "/lemall-admin/system/admin/login"
       - "/lemall-admin/system/admin/logout"
 lemall:

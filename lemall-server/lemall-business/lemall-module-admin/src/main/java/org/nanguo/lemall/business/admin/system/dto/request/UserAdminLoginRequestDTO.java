@@ -2,12 +2,14 @@ package org.nanguo.lemall.business.admin.system.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
 
-@Data
+@Getter
+@Setter
 @Schema(name = "UserAdminLoginRequestDTO",description = "后台用户登录请求dto")
 public class UserAdminLoginRequestDTO implements Serializable {
     @Serial

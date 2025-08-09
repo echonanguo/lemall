@@ -3,6 +3,7 @@ package org.nanguo.lemall.business.admin.system.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 import org.nanguo.lemall.business.admin.system.entity.UmsAdmin;
+import org.nanguo.lemall.business.admin.system.entity.UmsAdminRoleRelation;
 import org.nanguo.lemall.business.admin.system.entity.UmsResource;
 import org.nanguo.lemall.business.admin.system.entity.UmsRole;
 
@@ -10,6 +11,11 @@ import java.util.List;
 
 public interface UmsAdminMapper extends BaseMapper<UmsAdmin> {
 
+    /**
+     * 获取资源列表
+     * @param adminId 用户id
+     * @return 资源列表
+     */
     List<UmsResource> getResourceList(@Param("adminId") Long adminId);
 
 

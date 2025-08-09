@@ -1,9 +1,7 @@
 package org.nanguo.lemall.business.admin.system.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.util.Date;
 
 /**
@@ -23,7 +21,7 @@ public class UmsMenu {
     /**
      * 创建时间
      */
-    @TableField(value = "create_time")
+    @TableField(value="create_time", fill = FieldFill.INSERT)
     private Date createTime;
 
     /**

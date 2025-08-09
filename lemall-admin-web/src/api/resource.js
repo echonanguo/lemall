@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(params) {
   return request({
-    url: '/resource/list',
+    url: '/system/resource/list',
     method: 'get',
     params: params
   })
@@ -10,7 +10,7 @@ export function fetchList(params) {
 
 export function createResource(data) {
   return request({
-    url: '/resource/create',
+    url: '/system/resource/create',
     method: 'post',
     data: data
   })
@@ -18,7 +18,7 @@ export function createResource(data) {
 
 export function updateResource(id, data) {
   return request({
-    url: '/resource/update/' + id,
+    url: '/system/resource/update/' + id,
     method: 'post',
     data: data
   })
@@ -26,14 +26,14 @@ export function updateResource(id, data) {
 
 export function deleteResource(id) {
   return request({
-    url: '/resource/delete/' + id,
+    url: '/system/resource/delete/' + id,
     method: 'post'
   })
 }
 
 export function fetchAllResourceList() {
   return request({
-    url: '/resource/listAll',
+    url: '/system/resource/listAll',
     method: 'get'
   })
 }

@@ -2,9 +2,13 @@ package org.nanguo.lemall.business.admin.system.service;
 
 import cn.dev33.satoken.stp.SaTokenInfo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import org.nanguo.lemall.business.admin.system.dto.request.UmsAdminParamRequestDTO;
+import org.nanguo.lemall.business.admin.system.dto.response.UmsAdminResponseDTO;
+import org.nanguo.lemall.business.admin.system.dto.response.UmsRoleResponseDTO;
 import org.nanguo.lemall.business.admin.system.entity.UmsAdmin;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.nanguo.lemall.business.admin.system.entity.UmsRole;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,7 +31,7 @@ public interface UmsAdminService extends IService<UmsAdmin>{
     /**
      * 获取用户对于角色
      */
-    List<UmsRole> getRoleList(Long id);
+    List<UmsRoleResponseDTO> getRoleList(Long id);
 
     /**
      * 分页查询所有用户
@@ -36,5 +40,38 @@ public interface UmsAdminService extends IService<UmsAdmin>{
      * @param pageNum 页码
      * @return 查询结果
      */
-    IPage<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum);
+    IPage<UmsAdminResponseDTO> list(String keyword, Integer pageSize, Integer pageNum);
+
+    /**
+     * 用户注册
+     * @param umsAdminParam 注册参数
+     * @return 注册后用户信息
+     */
+    UmsAdminResponseDTO register(UmsAdminParamRequestDTO umsAdminParam);
+
+    /**
+     * 更改用户信息
+     * @param id 用户id
+     * @param umsAdminParamRequestDTO 用户信息
+     * @return 更新结果
+     */
+    boolean updateAdmin(Long id, UmsAdminParamRequestDTO umsAdminParamRequestDTO);
+
+
+    /**
+     * 删除用户信息
+     * @param id 用户id
+     * @return 删除标志
+     */
+    @Transactional(rollbackFor = Exception.class)
+    boolean deleteAdmin(Long id);
+
+    /**
+     * 给用户分配角色
+     * @param adminId 用户id
+     * @param roleIds 角色id
+     * @return 受影响行数
+     */
+    @Transactional(rollbackFor = Exception.class)
+    int updateRole(Long adminId, List<Long> roleIds);
 }
