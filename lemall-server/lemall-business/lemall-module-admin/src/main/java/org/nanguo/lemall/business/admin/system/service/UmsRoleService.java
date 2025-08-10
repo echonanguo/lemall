@@ -1,7 +1,7 @@
 package org.nanguo.lemall.business.admin.system.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.nanguo.lemall.business.admin.system.dto.request.UmsRoleParamRequestDTO;
+import org.nanguo.lemall.business.admin.system.dto.request.UmsRoleRequestDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsMenuResponseDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsResourceResponseDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsRoleResponseDTO;
@@ -36,7 +36,7 @@ public interface UmsRoleService extends IService<UmsRole>{
      * @param umsRole 内容
      * @return 受影响的行数
      */
-    int updateRole(Long id, UmsRoleParamRequestDTO umsRole);
+    int updateRole(Long id, UmsRoleRequestDTO umsRole);
 
     /**
      * 返回所有角色
@@ -58,7 +58,7 @@ public interface UmsRoleService extends IService<UmsRole>{
      * @param role 角色dto
      * @return 是否成功
      */
-    boolean create(UmsRoleParamRequestDTO role);
+    boolean create(UmsRoleRequestDTO role);
 
     /**
      * 根据角色id查菜单

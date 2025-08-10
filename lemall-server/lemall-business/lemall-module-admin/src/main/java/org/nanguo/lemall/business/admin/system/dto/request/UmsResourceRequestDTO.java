@@ -2,7 +2,6 @@ package org.nanguo.lemall.business.admin.system.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,19 +10,23 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@Schema(name = "角色请求类")
-public class UmsRoleParamRequestDTO implements Serializable {
+@Schema(name = "资源请求dto")
+public class UmsResourceRequestDTO implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
     @NotBlank
-    @Schema(description = "角色名称")
+    @Schema(description = "资源名称")
     private String name;
 
+    @NotBlank
+    @Schema(description = "资源url")
+    private String url;
+
+    @NotBlank
     @Schema(description = "描述")
     private String description;
 
-    @NotNull
-    @Schema(description = "状态")
-    private Integer status;
+    @Schema(description = "资源分类id")
+    private Long categoryId;
 }

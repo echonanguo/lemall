@@ -9,12 +9,11 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.nanguo.lemall.auth.constant.AuthConstant;
-import org.nanguo.lemall.business.admin.system.dto.request.UmsAdminParamRequestDTO;
+import org.nanguo.lemall.business.admin.system.dto.request.UmsAdminRequestDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsAdminResponseDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsRoleResponseDTO;
 import org.nanguo.lemall.business.admin.system.entity.*;
 import org.nanguo.lemall.business.admin.system.mapper.UmsAdminLoginLogMapper;
-import org.nanguo.lemall.business.admin.system.mapper.UmsAdminRoleRelationMapper;
 import org.nanguo.lemall.business.admin.system.service.UmsAdminCacheService;
 import org.nanguo.lemall.business.admin.system.service.UmsAdminRoleRelationService;
 import org.nanguo.lemall.business.admin.system.service.UmsRoleService;
@@ -117,7 +116,7 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
     }
 
     @Override
-    public UmsAdminResponseDTO register(UmsAdminParamRequestDTO umsAdminParam) {
+    public UmsAdminResponseDTO register(UmsAdminRequestDTO umsAdminParam) {
         UmsAdmin umsAdmin = new UmsAdmin();
         BeanUtils.copyProperties(umsAdminParam, umsAdmin);
         umsAdmin.setCreateTime(new Date());
@@ -137,10 +136,10 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
     }
 
     @Override
-    public boolean updateAdmin(Long id, UmsAdminParamRequestDTO umsAdminParamRequestDTO) {
+    public boolean updateAdmin(Long id, UmsAdminRequestDTO umsAdminRequestDTO) {
         // 如何username不为null说明是编辑
-        if (umsAdminParamRequestDTO.getUsername() != null) {
-            List<UmsAdmin> umsAdmins = baseMapper.selectList(Wrappers.<UmsAdmin>lambdaQuery().eq(UmsAdmin::getUsername, umsAdminParamRequestDTO.getUsername()));
+        if (umsAdminRequestDTO.getUsername() != null) {
+            List<UmsAdmin> umsAdmins = baseMapper.selectList(Wrappers.<UmsAdmin>lambdaQuery().eq(UmsAdmin::getUsername, umsAdminRequestDTO.getUsername()));
             if (!umsAdmins.isEmpty()) {
                 Long tempId = umsAdmins.get(0).getId();
                 if (!tempId.equals(id)) {
@@ -150,7 +149,7 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
         }
         UmsAdmin umsAdmin = new UmsAdmin();
         umsAdmin.setId(id);
-        BeanUtils.copyProperties(umsAdminParamRequestDTO, umsAdmin);
+        BeanUtils.copyProperties(umsAdminRequestDTO, umsAdmin);
         return super.updateById(umsAdmin);
     }
 

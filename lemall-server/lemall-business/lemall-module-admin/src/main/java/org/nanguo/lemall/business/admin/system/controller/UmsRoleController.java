@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
-import org.nanguo.lemall.business.admin.system.dto.request.UmsRoleParamRequestDTO;
+import org.nanguo.lemall.business.admin.system.dto.request.UmsRoleRequestDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsMenuResponseDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsResourceResponseDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsRoleResponseDTO;
@@ -45,7 +45,7 @@ public class UmsRoleController {
     @Operation(summary = "修改角色状态")
     @PostMapping("/updateStatus/{id}")
     public Result<?> updateStatus(@PathVariable @NotNull Long id, @RequestParam(value = "status") @NotNull Integer status) {
-        UmsRoleParamRequestDTO umsRole = new UmsRoleParamRequestDTO();
+        UmsRoleRequestDTO umsRole = new UmsRoleRequestDTO();
         umsRole.setStatus(status);
         int flag = umsRoleService.updateRole(id,umsRole);
         return flag > 0 ? Result.success() : Result.fail("修改角色状态失败");
@@ -53,7 +53,7 @@ public class UmsRoleController {
 
     @Operation(summary = "修改角色")
     @PostMapping("/update/{id}")
-    public Result<?> update(@PathVariable @NotNull Long id, @RequestBody @Validated UmsRoleParamRequestDTO role) {
+    public Result<?> update(@PathVariable @NotNull Long id, @RequestBody @Validated UmsRoleRequestDTO role) {
         int flag = umsRoleService.updateRole(id,role);
         return flag > 0 ? Result.success() : Result.fail("修改角色失败");
     }
@@ -67,7 +67,7 @@ public class UmsRoleController {
 
     @Operation(summary = "添加角色")
     @PostMapping("/create")
-    public Result<?> create(@RequestBody @Validated UmsRoleParamRequestDTO role) {
+    public Result<?> create(@RequestBody @Validated UmsRoleRequestDTO role) {
         boolean flag = umsRoleService.create(role);
         return flag ? Result.success() : Result.fail("添加角色失败");
     }

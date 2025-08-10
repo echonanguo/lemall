@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
-import org.nanguo.lemall.business.admin.system.dto.request.UmsRoleParamRequestDTO;
+import org.nanguo.lemall.business.admin.system.dto.request.UmsRoleRequestDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsMenuResponseDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsResourceResponseDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsRoleResponseDTO;
@@ -49,7 +49,7 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
     }
 
     @Override
-    public int updateRole(Long id, UmsRoleParamRequestDTO umsRole) {
+    public int updateRole(Long id, UmsRoleRequestDTO umsRole) {
         // 如果name不为null，说明是修改信息
         if (umsRole.getName() != null) {
             List<UmsRole> umsRoles = baseMapper.selectList(Wrappers.<UmsRole>lambdaQuery().eq(UmsRole::getName, umsRole.getName()));
@@ -84,7 +84,7 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
     }
 
     @Override
-    public boolean create(UmsRoleParamRequestDTO role) {
+    public boolean create(UmsRoleRequestDTO role) {
         UmsRole umsRole = new UmsRole();
         BeanUtils.copyProperties(role, umsRole);
         umsRole.setAdminCount(0);

@@ -1,29 +1,26 @@
-package org.nanguo.lemall.business.admin.system.dto.response;
+package org.nanguo.lemall.business.admin.system.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Date;
 
-@Getter
 @Setter
-@Schema(name = "资源分类响应dto")
-public class UmsResourceCategoryResponseDTO implements Serializable {
+@Getter
+@Schema(name = "资源分类请求dto")
+public class UmsResourceCategoryRequestDTO implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @Schema(description = "id")
-    private Long id;
-
-    @Schema(description = "创建时间")
-    private Date createTime;
-
+    @NotBlank
     @Schema(description = "分类名称")
     private String name;
 
+    @NotNull
     @Schema(description = "排序")
     private Integer sort;
 }

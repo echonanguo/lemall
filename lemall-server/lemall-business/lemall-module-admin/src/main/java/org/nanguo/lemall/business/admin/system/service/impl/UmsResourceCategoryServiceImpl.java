@@ -1,7 +1,13 @@
 package org.nanguo.lemall.business.admin.system.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import lombok.RequiredArgsConstructor;
+import org.nanguo.lemall.business.admin.system.dto.request.UmsResourceCategoryRequestDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsResourceCategoryResponseDTO;
+import org.nanguo.lemall.business.admin.system.entity.UmsResource;
+import org.nanguo.lemall.business.admin.system.service.UmsResourceService;
+import org.nanguo.lemall.util.response.BizException;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.nanguo.lemall.business.admin.system.entity.UmsResourceCategory;
@@ -12,15 +18,42 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class UmsResourceCategoryServiceImpl extends ServiceImpl<UmsResourceCategoryMapper, UmsResourceCategory> implements UmsResourceCategoryService {
+
+    private final UmsResourceService umsResourceService;
 
     @Override
     public List<UmsResourceCategoryResponseDTO> listAllResourceCategory() {
         return super.list(Wrappers.<UmsResourceCategory>lambdaQuery().orderByDesc(UmsResourceCategory::getSort).orderByDesc(UmsResourceCategory::getCreateTime)).stream().map(e -> {
             UmsResourceCategoryResponseDTO dto = new UmsResourceCategoryResponseDTO();
-            dto.setId(e.getId());
-            dto.setName(e.getName());
+            BeanUtils.copyProperties(e, dto);
             return dto;
         }).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean create(UmsResourceCategoryRequestDTO umsResourceCategoryRequestDTO) {
+        UmsResourceCategory umsResourceCategory = new UmsResourceCategory();
+        BeanUtils.copyProperties(umsResourceCategoryRequestDTO, umsResourceCategory);
+        return super.save(umsResourceCategory);
+    }
+
+    @Override
+    public boolean updateRes(Long id, UmsResourceCategoryRequestDTO umsResourceCategoryRequestDTO) {
+        UmsResourceCategory umsResourceCategory = new UmsResourceCategory();
+        BeanUtils.copyProperties(umsResourceCategoryRequestDTO, umsResourceCategory);
+        umsResourceCategory.setId(id);
+        return super.updateById(umsResourceCategory);
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        // 检查该分类下有没有菜单项
+        List<UmsResource> list = umsResourceService.list(Wrappers.<UmsResource>lambdaQuery().eq(UmsResource::getCategoryId, id));
+        if (list != null && !list.isEmpty()) {
+            throw new BizException("该菜单分类下还有菜单项");
+        }
+        return super.removeById(id);
     }
 }

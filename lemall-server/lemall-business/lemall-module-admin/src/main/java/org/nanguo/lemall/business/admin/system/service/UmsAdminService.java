@@ -2,12 +2,11 @@ package org.nanguo.lemall.business.admin.system.service;
 
 import cn.dev33.satoken.stp.SaTokenInfo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.nanguo.lemall.business.admin.system.dto.request.UmsAdminParamRequestDTO;
+import org.nanguo.lemall.business.admin.system.dto.request.UmsAdminRequestDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsAdminResponseDTO;
 import org.nanguo.lemall.business.admin.system.dto.response.UmsRoleResponseDTO;
 import org.nanguo.lemall.business.admin.system.entity.UmsAdmin;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.nanguo.lemall.business.admin.system.entity.UmsRole;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -47,15 +46,15 @@ public interface UmsAdminService extends IService<UmsAdmin>{
      * @param umsAdminParam 注册参数
      * @return 注册后用户信息
      */
-    UmsAdminResponseDTO register(UmsAdminParamRequestDTO umsAdminParam);
+    UmsAdminResponseDTO register(UmsAdminRequestDTO umsAdminParam);
 
     /**
      * 更改用户信息
      * @param id 用户id
-     * @param umsAdminParamRequestDTO 用户信息
+     * @param umsAdminRequestDTO 用户信息
      * @return 更新结果
      */
-    boolean updateAdmin(Long id, UmsAdminParamRequestDTO umsAdminParamRequestDTO);
+    boolean updateAdmin(Long id, UmsAdminRequestDTO umsAdminRequestDTO);
 
 
     /**
