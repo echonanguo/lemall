@@ -3,6 +3,7 @@ package org.nanguo.lemall.handler;
 import lombok.extern.slf4j.Slf4j;
 import org.nanguo.lemall.util.response.BizException;
 import org.nanguo.lemall.util.response.Result;
+import org.nanguo.lemall.util.response.ResultCode;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -15,7 +16,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Result<?> handle(MethodArgumentNotValidException e) {
         log.error(e.getMessage(),e);
-        return Result.fail("请求参数校验失败");
+        return Result.fail(ResultCode.VALIDATE_FAILED);
     }
 
     @ExceptionHandler(value = BizException.class)

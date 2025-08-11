@@ -1,7 +1,6 @@
 package org.nanguo.lemall.auth.config;
 
 import cn.dev33.satoken.context.SaHolder;
-import cn.dev33.satoken.context.model.SaRequest;
 import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.exception.NotPermissionException;
 import cn.dev33.satoken.filter.SaServletFilter;
@@ -17,7 +16,6 @@ import lombok.RequiredArgsConstructor;
 import org.nanguo.lemall.auth.constant.AuthConstant;
 import org.nanguo.lemall.auth.util.StpMemberUtil;
 import org.nanguo.lemall.util.response.Result;
-import org.nanguo.lemall.util.response.ResultCode;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -49,7 +47,7 @@ public class SaTokenConfig {
 
     private final IgnoreUrlsConfig ignoreUrlsConfig;
     private final PathPatternParser patternParser = PathPatternParser.defaultInstance; // 路径解析器
-    private final ConcurrentMap<String, PathPattern> patternCache = new ConcurrentHashMap<>(); // 缓存解析后的 PathPattern，提高匹配效率。
+    private final ConcurrentMap<String, PathPattern> patternCache = new ConcurrentHashMap<>(); // 缓存解析后的 PathPattern
 
     @Bean
     public SaServletFilter getSaServletFilter() {
@@ -57,61 +55,69 @@ public class SaTokenConfig {
                 .addInclude("/**")
                 .setExcludeList(ignoreUrlsConfig.getUrls())
                 .setAuth(obj -> {
-                    SaRequest request = SaHolder.getRequest();
-                    String requestPath = request.getRequestPath();
-
-                    // 2. 检查是否登录，未登录直接抛出异常
-                    SaRouter.match(portalPrefix + "/**", r -> StpMemberUtil.checkLogin()).stop();
-                    SaRouter.match(adminPrefix + "/**", r -> StpUtil.checkLogin());
-                    // 3. 从 Redis 中读取「路径 - 权限」的映射表，key 是路径模式，value 是权限标识
-                    Map<Object, Object> pathResourceMap = redisTemplate.opsForHash()
-                            .entries(AuthConstant.PATH_RESOURCE_MAP);
-                    // 4. 初始化要校验的权限列表，解析当前请求路径为 PathContainer 方便后续匹配
-                    List<String> needPermissionList = new ArrayList<>();
+                    String requestPath = SaHolder.getRequest().getRequestPath();
                     PathContainer pathToMatch = PathContainer.parsePath(requestPath);
 
-                    // 5. 遍历所有路径模式，和当前请求路径进行匹配，如果匹配上了，把对应的权限添加到needPermissionList中
-                    for (Map.Entry<Object, Object> entry : pathResourceMap.entrySet()) {
-                        String patternStr = (String) entry.getKey();
-                        PathPattern pattern = patternCache.computeIfAbsent(patternStr, patternParser::parse);
-                        if (pattern.matches(pathToMatch)) {
-                            needPermissionList.add((String) entry.getValue());
-                        }
-                    }
+                    // 1. 门户端：只检查登录
+                    SaRouter.match("/" + portalPrefix + "/**", r -> {
+                        StpMemberUtil.checkLogin();
+                    }).stop();
 
-                    if (!needPermissionList.isEmpty()) {
+                    // 2. 管理端：先登录，再权限校验
+                    SaRouter.match("/" + adminPrefix + "/**", r -> {
+                        StpUtil.checkLogin();
+                        // Redis 权限匹配
+                        Map<Object, Object> pathResourceMap = redisTemplate.opsForHash()
+                                .entries(AuthConstant.PATH_RESOURCE_MAP);
+
+                        List<String> needPermissionList = new ArrayList<>();
+                        for (Map.Entry<Object, Object> entry : pathResourceMap.entrySet()) {
+                            String patternStr = (String) entry.getKey();
+                            PathPattern pattern = patternCache.computeIfAbsent(patternStr, patternParser::parse);
+                            if (pattern.matches(pathToMatch)) {
+                                needPermissionList.add((String) entry.getValue());
+                            }
+                        }
+
+                        // 没有配置权限则直接拒绝
+                        if (needPermissionList.isEmpty()) {
+                            throw new NotPermissionException("该路径未配置访问权限");
+                        }
+
+                        // 校验权限
                         StpUtil.checkPermissionOr(Convert.toStrArray(needPermissionList));
-                    }
+                    }).stop();
+
+
+                    // 3.兜底：除了白名单外，所有未匹配到的路径都拒绝访问
+                    SaRouter.match("/**", r -> {
+                        throw new NotPermissionException("未授权访问");
+                    });
                 })
                 .setBeforeAuth(obj -> {
-                    //
+                    // ---------- 设置跨域响应头 ----------
                     SaHolder.getResponse()
-                            // ---------- 设置跨域响应头 ----------
-                            // 允许指定域访问跨域资源
                             .setHeader("Access-Control-Allow-Origin", "*")
-                            // 允许所有请求方式
                             .setHeader("Access-Control-Allow-Methods", "*")
-                            // 允许的header参数
                             .setHeader("Access-Control-Allow-Headers", "*")
-                            // 有效时间
                             .setHeader("Access-Control-Max-Age", "3600");
 
-                    // 如果是预检请求，则立即返回到前端
+                    // 如果是预检请求，则立即返回
                     SaRouter.match(SaHttpMethod.OPTIONS)
                             .free(r -> System.out.println("--------OPTIONS预检请求，不做处理"))
                             .back();
                 })
-                // 异常处理
                 .setError(e -> {
                     HttpServletResponse response = (HttpServletResponse) SaHolder.getResponse().getSource();
                     response.setHeader("Content-Type", "application/json; charset=utf-8");
                     response.setHeader("Access-Control-Allow-Origin", "*");
                     response.setHeader("Cache-Control", "no-cache");
+
                     Result<?> result;
                     if (e instanceof NotLoginException) {
-                        result = Result.fail(ResultCode.UNAUTHORIZED);
+                        result = Result.fail(e.getMessage());
                     } else if (e instanceof NotPermissionException) {
-                        result = Result.fail(ResultCode.FORBIDDEN);
+                        result = Result.fail(e.getMessage());
                     } else {
                         result = Result.fail(e.getMessage());
                     }
@@ -125,5 +131,4 @@ public class SaTokenConfig {
         return new StpLogicJwtForSimple();
     }
 }
-
 

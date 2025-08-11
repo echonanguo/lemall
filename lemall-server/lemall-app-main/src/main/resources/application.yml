@@ -47,6 +47,11 @@ sa-token:
   jwt-secret-key: zhuyuqinzuinb66f
   # 是否打印banner
   is-print: false
+minio:
+  endpoint: http://nanguo.io:9000 #MinIO服务所在地址
+  bucketName: lemall #存储桶名称
+  accessKey: 2Tg3dQnwkzQW2FDPgF7w #访问的key
+  secretKey: QbFeIhPQiOVWBfSSuoQkclN22Xj4jCvbGtgl42l1 #访问的秘钥
 springdoc:
   info:
     title: Lemall后台系统

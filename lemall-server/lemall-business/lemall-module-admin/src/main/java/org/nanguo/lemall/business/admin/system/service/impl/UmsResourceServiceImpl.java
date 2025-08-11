@@ -87,12 +87,16 @@ public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper, UmsRe
         UmsResource umsResource = new UmsResource();
         BeanUtils.copyProperties(umsResourceRequestDTO, umsResource);
         umsResource.setId(id);
-        return super.updateById(umsResource);
+        boolean b = super.updateById(umsResource);
+        initPathResourceMap();
+        return b;
     }
 
     @Override
     public boolean deleteRes(Long id) {
         umsRoleResourceRelationService.remove(Wrappers.<UmsRoleResourceRelation>lambdaQuery().eq(UmsRoleResourceRelation::getResourceId, id));
-        return super.removeById(id);
+        boolean b = super.removeById(id);
+        initPathResourceMap();
+        return b;
     }
 }

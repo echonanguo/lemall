@@ -31,6 +31,7 @@
         <sa-token-redis-jackson.version>1.37.0</sa-token-redis-jackson.version>
         <mybatis-plus-spring-boot3-starter.version>3.5.4</mybatis-plus-spring-boot3-starter.version>
         <druid-spring-boot-starter.veresion>1.2.18</druid-spring-boot-starter.veresion>
+        <minio.version>8.4.5</minio.version>
     </properties>
 
     <!-- 将依赖管理保留在父POM中 -->
@@ -99,6 +100,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-spring-boot-starter.veresion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
             </dependency>
 
         </dependencies>
