@@ -57,6 +57,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
+                    <compilerArgs>
+                        <arg>-parameters</arg>  <!-- 让编译器保留方法参数名 -->
+                    </compilerArgs>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
