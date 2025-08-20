@@ -23,7 +23,6 @@ public class UmsResourceRequestDTO implements Serializable {
     @Schema(description = "资源url")
     private String url;
 
-    @NotBlank
     @Schema(description = "描述")
     private String description;
 

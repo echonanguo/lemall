@@ -104,7 +104,7 @@ public class SaTokenConfig {
 
                     // 如果是预检请求，则立即返回
                     SaRouter.match(SaHttpMethod.OPTIONS)
-                            .free(r -> System.out.println("--------OPTIONS预检请求，不做处理"))
+                            .free(r -> {})
                             .back();
                 })
                 .setError(e -> {
