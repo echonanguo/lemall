@@ -25,6 +25,7 @@ public class PmsProductServiceImpl extends ServiceImpl<PmsProductMapper, PmsProd
                 .eq(StringUtils.hasText(productQueryParam.getProductSn()),PmsProduct::getProductSn,productQueryParam.getProductSn())
                 .eq(productQueryParam.getProductCategoryId() != null,PmsProduct::getProductCategoryId,productQueryParam.getProductCategoryId())
                 .eq(productQueryParam.getBrandId() != null,PmsProduct::getBrandId,productQueryParam.getBrandId())
+                .orderByDesc(PmsProduct::getSort)
         ).convert(e -> {
             PmsProductResponseDTO responseDTO = new PmsProductResponseDTO();
             BeanUtils.copyProperties(e, responseDTO);

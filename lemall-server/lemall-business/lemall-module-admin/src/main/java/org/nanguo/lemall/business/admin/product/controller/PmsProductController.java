@@ -9,10 +9,7 @@ import org.nanguo.lemall.business.admin.product.dto.response.PmsProductResponseD
 import org.nanguo.lemall.business.admin.product.service.PmsProductService;
 import org.nanguo.lemall.util.response.Result;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Validated
 @RestController
@@ -32,4 +29,7 @@ public class PmsProductController {
         return Result.success(res);
     }
 
+//    @Operation(summary = "创建商品")
+//    @PostMapping("/create")
+//    public
 }
