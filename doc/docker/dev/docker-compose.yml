@@ -34,9 +34,3 @@ services:
       - "9001:9001"
     volumes:
       - ./minio/data:/data
-
-  drawdb:
-    container_name: lemall-drawdb
-    image: xinsodev/drawdb
-    ports:
-      - 3000:80
