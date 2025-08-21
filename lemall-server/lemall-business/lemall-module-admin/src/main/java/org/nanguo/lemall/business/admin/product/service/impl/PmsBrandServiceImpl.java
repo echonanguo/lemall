@@ -20,18 +20,18 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> implements PmsBrandService{
+public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> implements PmsBrandService {
 
     private final PmsProductService pmsProductService;
 
     @Override
     public IPage<PmsBrandResponseDTO> getList(String keyword, Integer pageNum, Integer pageSize) {
-        return super.page(new Page<>(pageNum,pageSize), Wrappers.<PmsBrand>lambdaQuery()
-                .like(StringUtils.hasText(keyword),PmsBrand::getName, keyword)
+        return super.page(new Page<>(pageNum, pageSize), Wrappers.<PmsBrand>lambdaQuery()
+                .like(StringUtils.hasText(keyword), PmsBrand::getName, keyword)
                 .orderByDesc(PmsBrand::getSort)
         ).convert(e -> {
             PmsBrandResponseDTO pmsBrandResponseDTO = new PmsBrandResponseDTO();
-            BeanUtils.copyProperties(e,pmsBrandResponseDTO);
+            BeanUtils.copyProperties(e, pmsBrandResponseDTO);
             return pmsBrandResponseDTO;
         });
     }
@@ -40,7 +40,7 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
     public List<PmsBrandResponseDTO> getListAll() {
         return super.list().stream().map(e -> {
             PmsBrandResponseDTO pmsBrandResponseDTO = new PmsBrandResponseDTO();
-            BeanUtils.copyProperties(e,pmsBrandResponseDTO);
+            BeanUtils.copyProperties(e, pmsBrandResponseDTO);
             return pmsBrandResponseDTO;
         }).toList();
     }
@@ -49,7 +49,7 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
     public boolean create(PmsBrandRequestDTO requestDTO) {
         PmsBrand pmsBrand = new PmsBrand();
         requestDTO.setId(null);
-        BeanUtils.copyProperties(requestDTO,pmsBrand);
+        BeanUtils.copyProperties(requestDTO, pmsBrand);
         //如果创建时首字母为空，取名称的第一个为首字母
         if (!StringUtils.hasText(pmsBrand.getFirstLetter())) {
             pmsBrand.setFirstLetter(pmsBrand.getName().substring(0, 1));
@@ -60,7 +60,7 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
     @Override
     public boolean updateBrand(Long id, PmsBrandRequestDTO requestDTO) {
         PmsBrand pmsBrand = new PmsBrand();
-        BeanUtils.copyProperties(requestDTO,pmsBrand);
+        BeanUtils.copyProperties(requestDTO, pmsBrand);
         pmsBrand.setId(id);
         //如果创建时首字母为空，取名称的第一个为首字母
         if (!StringUtils.hasText(pmsBrand.getFirstLetter())) {
@@ -69,7 +69,7 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
         // 更新品牌时要更新商品中的品牌名称
         PmsProduct product = new PmsProduct();
         product.setBrandName(pmsBrand.getName());
-        pmsProductService.update(product,Wrappers.<PmsProduct>lambdaUpdate().eq(PmsProduct::getBrandId,id));
+        pmsProductService.update(product, Wrappers.<PmsProduct>lambdaUpdate().eq(PmsProduct::getBrandId, id));
         return super.updateById(pmsBrand);
     }
 
@@ -77,5 +77,35 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
     public boolean deleteBrandById(Long id) {
         // TODO 商品表关联了这个的，如果要删，要确认
         return super.removeById(id);
+    }
+
+    @Override
+    public PmsBrandResponseDTO getBrandById(Long id) {
+        PmsBrandResponseDTO pmsBrandResponseDTO = new PmsBrandResponseDTO();
+        PmsBrand pmsBrand = super.getById(id);
+        BeanUtils.copyProperties(pmsBrand, pmsBrandResponseDTO);
+        return pmsBrandResponseDTO;
+    }
+
+    @Override
+    public boolean deleteBrandBatch(List<Long> ids) {
+        // TODO 商品表关联了这个的，如果要删，要确认
+        return super.removeBatchByIds(ids);
+    }
+
+    @Override
+    public boolean updateBrandByIds(List<Long> ids, Integer showStatus) {
+        return super.update(Wrappers.<PmsBrand>lambdaUpdate()
+                .in(PmsBrand::getId, ids)
+                .set(PmsBrand::getShowStatus, showStatus)
+        );
+    }
+
+    @Override
+    public boolean updateFactoryStatus(List<Long> ids, Integer factoryStatus) {
+        return super.update(Wrappers.<PmsBrand>lambdaUpdate()
+                .in(PmsBrand::getId, ids)
+                .set(PmsBrand::getFactoryStatus, factoryStatus)
+        );
     }
 }

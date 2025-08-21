@@ -58,4 +58,34 @@ public class PmsBrandController {
         boolean b = brandService.deleteBrandById(id);
         return b ? Result.success() : Result.fail("删除品牌失败");
     }
+
+    @Operation(summary = "根据编号查询品牌信息")
+    @GetMapping(value = "/{id}")
+    public Result<PmsBrandResponseDTO> getItem(@PathVariable("id") Long id) {
+        PmsBrandResponseDTO pmsBrandResponseDTO = brandService.getBrandById(id);
+        return Result.success(pmsBrandResponseDTO);
+    }
+
+    @Operation(summary = "批量删除品牌")
+    @PostMapping("/delete/batch")
+    public Result<?> deleteBatch(@RequestParam("ids") List<Long> ids) {
+        boolean b = brandService.deleteBrandBatch(ids);
+        return b ? Result.success() : Result.fail("批量删除品牌失败");
+    }
+
+    @Operation(summary = "批量更新显示状态")
+    @PostMapping("/update/showStatus")
+    public Result<?> updateShowStatus(@RequestParam("ids") List<Long> ids,
+                                     @RequestParam("showStatus") Integer showStatus) {
+        boolean b = brandService.updateBrandByIds(ids,showStatus);
+        return b ? Result.success() : Result.fail("批量更新显示状态失败");
+    }
+
+    @Operation(summary = "批量更新厂家制造商状态")
+    @PostMapping("/update/factoryStatus")
+    public Result<?> updateFactoryStatus(@RequestParam("ids") List<Long> ids,
+                                         @RequestParam("factoryStatus") Integer factoryStatus) {
+        boolean b = brandService.updateFactoryStatus(ids,factoryStatus);
+        return b ? Result.success() : Result.fail("批量更新厂家制造商状态失败");
+    }
 }
