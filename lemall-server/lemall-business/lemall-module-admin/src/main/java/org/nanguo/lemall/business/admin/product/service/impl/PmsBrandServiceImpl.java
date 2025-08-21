@@ -12,6 +12,8 @@ import org.nanguo.lemall.business.admin.product.entity.PmsBrand;
 import org.nanguo.lemall.business.admin.product.service.PmsBrandService;
 import org.springframework.util.StringUtils;
 
+import java.util.List;
+
 @Service
 public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> implements PmsBrandService{
 
@@ -25,5 +27,14 @@ public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandMapper, PmsBrand> i
             BeanUtils.copyProperties(e,pmsBrandResponseDTO);
             return pmsBrandResponseDTO;
         });
+    }
+
+    @Override
+    public List<PmsBrandResponseDTO> getListAll() {
+        return super.list().stream().map(e -> {
+            PmsBrandResponseDTO pmsBrandResponseDTO = new PmsBrandResponseDTO();
+            BeanUtils.copyProperties(e,pmsBrandResponseDTO);
+            return pmsBrandResponseDTO;
+        }).toList();
     }
 }
