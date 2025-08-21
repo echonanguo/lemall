@@ -8699,7 +8699,7 @@
           "x": 1000,
           "y": 1200,
           "width": 232,
-          "height": 190,
+          "height": 210,
           "isBold": false,
           "titleColor": {
             "r": 255,
@@ -8750,9 +8750,9 @@
           "height": 910,
           "isBold": false,
           "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
+            "r": 255,
+            "g": 214,
+            "b": 147,
             "a": 1
           }
         },
@@ -8811,7 +8811,7 @@
           "x": 540,
           "y": 990,
           "width": 184,
-          "height": 290,
+          "height": 310,
           "isBold": false,
           "titleColor": {
             "r": 255,
@@ -8907,7 +8907,7 @@
           "x": 530,
           "y": 1310,
           "width": 224,
-          "height": 270,
+          "height": 290,
           "isBold": false,
           "titleColor": {
             "r": 255,

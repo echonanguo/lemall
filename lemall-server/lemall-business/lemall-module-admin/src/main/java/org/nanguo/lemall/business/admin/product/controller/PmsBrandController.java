@@ -2,15 +2,14 @@ package org.nanguo.lemall.business.admin.product.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.nanguo.lemall.business.admin.product.dto.request.PmsBrandRequestDTO;
 import org.nanguo.lemall.business.admin.product.dto.response.PmsBrandResponseDTO;
 import org.nanguo.lemall.business.admin.product.service.PmsBrandService;
 import org.nanguo.lemall.util.response.Result;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,6 +17,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/lemall-admin/product/brand")
+@Tag(name = "品牌管理",description = "PmsBrandController")
 public class PmsBrandController {
 
     private final PmsBrandService brandService;
@@ -36,5 +36,26 @@ public class PmsBrandController {
     public Result<List<PmsBrandResponseDTO>> getListAll() {
         List<PmsBrandResponseDTO> brandResponseDTOS = brandService.getListAll();
         return Result.success(brandResponseDTOS);
+    }
+
+    @Operation(summary = "添加品牌")
+    @PostMapping("/create")
+    public Result<?> create(@Validated @RequestBody PmsBrandRequestDTO requestDTO) {
+        boolean b = brandService.create(requestDTO);
+        return b ? Result.success() : Result.fail("添加品牌失败");
+    }
+
+    @Operation(summary = "更新品牌")
+    @PostMapping("/update/{id}")
+    public Result<?> update(@PathVariable("id") Long id, @Validated @RequestBody PmsBrandRequestDTO requestDTO) {
+        boolean b = brandService.updateBrand(id,requestDTO);
+        return b ? Result.success() : Result.fail("更新品牌失败");
+    }
+
+    @Operation(summary = "删除品牌")
+    @GetMapping(value = "/delete/{id}")
+    public Result<?> delete(@PathVariable("id") Long id) {
+        boolean b = brandService.deleteBrandById(id);
+        return b ? Result.success() : Result.fail("删除品牌失败");
     }
 }
