@@ -31,7 +31,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @Service
@@ -97,7 +96,7 @@ public class UmsAdminServiceImpl extends ServiceImpl<UmsAdminMapper, UmsAdmin> i
             UmsRoleResponseDTO umsRoleResponseDTO = new UmsRoleResponseDTO();
             BeanUtils.copyProperties(role, umsRoleResponseDTO);
             return umsRoleResponseDTO;
-        }).collect(Collectors.toList());
+        }).toList();
     }
 
     @Override

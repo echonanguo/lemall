@@ -17,7 +17,7 @@ import org.nanguo.lemall.business.admin.system.entity.UmsMenu;
 import org.nanguo.lemall.business.admin.system.service.UmsMenuService;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 @RequiredArgsConstructor
@@ -32,13 +32,13 @@ public class UmsMenuServiceImpl extends ServiceImpl<UmsMenuMapper, UmsMenu> impl
             UmsMenuNodeResponseDTO dto = new UmsMenuNodeResponseDTO();
             BeanUtils.copyProperties(umsMenu, dto);
             return dto;
-        }).collect(Collectors.toList());
+        }).toList();
 
         // 构建树形结构（只取 parentId=0 的作为根节点）
         return menuList.stream()
                 .filter(menu -> menu.getParentId() == 0L)
                 .map(menu -> buildMenuTree(menu, menuList))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -112,7 +112,7 @@ public class UmsMenuServiceImpl extends ServiceImpl<UmsMenuMapper, UmsMenu> impl
         List<UmsMenuNodeResponseDTO> children = menuList.stream()
                 .filter(subMenu -> subMenu.getParentId().equals(menu.getId()))
                 .map(subMenu -> buildMenuTree(subMenu, menuList))
-                .collect(Collectors.toList());
+                .toList();
         menu.setChildren(children);
         return menu;
     }

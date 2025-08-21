@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+
 
 @Validated
 @RestController
@@ -71,7 +71,7 @@ public class UmsAdminController {
         data.put("icon", umsAdmin.getIcon());
         List<UmsRoleResponseDTO> roleList = adminService.getRoleList(umsAdmin.getId());
         if(CollUtil.isNotEmpty(roleList)){
-            List<String> roles = roleList.stream().map(UmsRoleResponseDTO::getName).collect(Collectors.toList());
+            List<String> roles = roleList.stream().map(UmsRoleResponseDTO::getName).toList();
             data.put("roles",roles);
         }
         return Result.success(data);

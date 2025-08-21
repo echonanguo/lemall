@@ -15,7 +15,7 @@ import org.nanguo.lemall.business.admin.system.mapper.UmsResourceCategoryMapper;
 import org.nanguo.lemall.business.admin.system.service.UmsResourceCategoryService;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 @RequiredArgsConstructor
@@ -29,7 +29,7 @@ public class UmsResourceCategoryServiceImpl extends ServiceImpl<UmsResourceCateg
             UmsResourceCategoryResponseDTO dto = new UmsResourceCategoryResponseDTO();
             BeanUtils.copyProperties(e, dto);
             return dto;
-        }).collect(Collectors.toList());
+        }).toList();
     }
 
     @Override

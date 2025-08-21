@@ -22,7 +22,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
+
 
 /**
  * 后台资源管理Service实现类
@@ -54,7 +54,7 @@ public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper, UmsRe
             UmsResourceResponseDTO umsResourceResponseDTO = new UmsResourceResponseDTO();
             BeanUtils.copyProperties(e, umsResourceResponseDTO);
             return umsResourceResponseDTO;
-        }).collect(Collectors.toList());
+        }).toList();
     }
 
     @Override

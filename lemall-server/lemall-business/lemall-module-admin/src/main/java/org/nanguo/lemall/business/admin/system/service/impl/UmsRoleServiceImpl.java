@@ -19,7 +19,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
+
 
 @Service
 @RequiredArgsConstructor
@@ -73,7 +73,7 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
             UmsRoleResponseDTO umsRoleResponseDTO = new UmsRoleResponseDTO();
             BeanUtils.copyProperties(umsRole, umsRoleResponseDTO);
             return umsRoleResponseDTO;
-        }).collect(Collectors.toList());
+        }).toList();
     }
 
     @Override
@@ -106,7 +106,7 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
             umsRoleMenuRelation.setRoleId(roleId);
             umsRoleMenuRelation.setMenuId(id);
             return umsRoleMenuRelation;
-        }).collect(Collectors.toList());
+        }).toList();
         umsRoleMenuRelationService.saveBatch(relationList);
         return menuIds.size();
     }
@@ -126,7 +126,7 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
             umsRoleResourceRelation.setRoleId(roleId);
             umsRoleResourceRelation.setResourceId(id);
             return umsRoleResourceRelation;
-        }).collect(Collectors.toList());
+        }).toList();
         umsRoleResourceRelationService.saveBatch(relationList);
 
         umsResourceService.initPathResourceMap();

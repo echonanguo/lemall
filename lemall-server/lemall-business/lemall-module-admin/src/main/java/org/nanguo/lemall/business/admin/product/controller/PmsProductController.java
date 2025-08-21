@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.nanguo.lemall.business.admin.product.dto.request.PmsProductQueryParamRequestDTO;
+import org.nanguo.lemall.business.admin.product.dto.request.PmsProductRequestDTO;
 import org.nanguo.lemall.business.admin.product.dto.response.PmsProductResponseDTO;
 import org.nanguo.lemall.business.admin.product.service.PmsProductService;
 import org.nanguo.lemall.util.response.Result;
@@ -29,7 +30,10 @@ public class PmsProductController {
         return Result.success(res);
     }
 
-//    @Operation(summary = "创建商品")
-//    @PostMapping("/create")
-//    public
+    @Operation(summary = "创建商品")
+    @PostMapping("/create")
+    public Result<?> create(@Validated @RequestBody PmsProductRequestDTO requestDTO) {
+        boolean flag = pmsProductService.create(requestDTO);
+        return flag ? Result.success() : Result.fail("创建商品失败");
+    }
 }
