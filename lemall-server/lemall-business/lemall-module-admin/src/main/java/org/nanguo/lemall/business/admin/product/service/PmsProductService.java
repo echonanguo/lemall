@@ -2,7 +2,9 @@ package org.nanguo.lemall.business.admin.product.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.nanguo.lemall.business.admin.product.dto.request.PmsProductQueryParamRequestDTO;
-import org.nanguo.lemall.business.admin.product.dto.request.PmsProductRequestDTO;
+import org.nanguo.lemall.business.admin.product.dto.request.PmsProductParamRequestDTO;
+import org.nanguo.lemall.business.admin.product.dto.response.PmsProductParamResponseDTO;
+import org.nanguo.lemall.business.admin.product.dto.response.PmsProductParamResultResponseDTO;
 import org.nanguo.lemall.business.admin.product.dto.response.PmsProductResponseDTO;
 import org.nanguo.lemall.business.admin.product.entity.PmsProduct;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -26,5 +28,12 @@ public interface PmsProductService extends IService<PmsProduct>{
      * @return 成功标志
      */
     @Transactional(rollbackFor = Exception.class)
-    boolean create(PmsProductRequestDTO requestDTO);
+    boolean create(PmsProductParamRequestDTO requestDTO);
+
+    /**
+     * 根据商品id获取商品编辑信息
+     * @param id id
+     * @return 结果
+     */
+    PmsProductParamResultResponseDTO getUpdateInfo(Long id);
 }

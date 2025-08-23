@@ -3,18 +3,15 @@ package org.nanguo.lemall.business.admin.product.dto.request;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
-import org.nanguo.lemall.business.admin.content.dto.request.CmsPrefrenceAreaProductRelationRequestDTO;
-import org.nanguo.lemall.business.admin.content.dto.request.CmsSubjectProductRelationRequestDTO;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter
-@Schema(name = "商品请求dto")
+@Schema(name = "商品信息请求dto")
 public class PmsProductRequestDTO implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -133,25 +130,4 @@ public class PmsProductRequestDTO implements Serializable {
 
     @Schema(description = "商品分类名称")
     private String productCategoryName;
-
-    @Schema(description = "商品阶梯价格设置")
-    private List<PmsProductLadderRequestDTO> productLadderList;
-
-    @Schema(description = "商品满减价格设置")
-    private List<PmsProductFullReductionRequestDTO> productFullReductionList;
-
-    @Schema(description = "商品会员价格设置")
-    private List<PmsMemberPriceRequestDTO> memberPriceList;
-
-    @Schema(description = "商品的sku库存信息")
-    private List<PmsSkuStockRequestDTO> skuStockList;
-
-    @Schema(description = "商品参数及自定义规格属性")
-    private List<PmsProductAttributeValueRequestDTO> productAttributeValueList;
-
-    @Schema(description = "专题和商品关系")
-    private List<CmsSubjectProductRelationRequestDTO> subjectProductRelationList;
-
-    @Schema(description = "优选专区和商品的关系")
-    private List<CmsPrefrenceAreaProductRelationRequestDTO> prefrenceAreaProductRelationList;
 }

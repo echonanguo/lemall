@@ -57,4 +57,72 @@
     detail_mobile_html, promotion_start_time, promotion_end_time, promotion_per_limit, 
     promotion_type, brand_name, product_category_name
   </sql>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="org.nanguo.lemall.business.admin.product.entity.PmsProduct">
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+    <result column="detail_desc" jdbcType="LONGVARCHAR" property="detailDesc" />
+    <result column="detail_html" jdbcType="LONGVARCHAR" property="detailHtml" />
+    <result column="detail_mobile_html" jdbcType="LONGVARCHAR" property="detailMobileHtml" />
+  </resultMap>
+
+  <resultMap id="updateInfoMap" type="org.nanguo.lemall.business.admin.product.dto.response.PmsProductParamResultResponseDTO" extends="ResultMapWithBLOBs">
+    <!-- 主表额外字段 -->
+    <result column="cateParentId" jdbcType="BIGINT" property="cateParentId" />
+
+    <!-- 各子表用单独 select 查询 -->
+    <collection property="productLadderList" column="{productId=id}" select="selectProductLadderByProductId"/>
+    <collection property="productFullReductionList" column="{productId=id}" select="selectProductFullReductionByProductId"/>
+    <collection property="memberPriceList" column="{productId=id}" select="selectMemberPriceByProductId"/>
+    <collection property="skuStockList" column="{productId=id}" select="selectSkuStockByProductId"/>
+    <collection property="productAttributeValueList" column="{productId=id}" select="selectProductAttributeValueByProductId"/>
+    <collection property="subjectProductRelationList" column="{productId=id}" select="selectSubjectProductRelationByProductId"/>
+    <collection property="prefrenceAreaProductRelationList" column="{productId=id}" select="selectPrefrenceAreaProductRelationByProductId"/>
+  </resultMap>
+
+  <!-- 主表查询（只查商品和分类） -->
+  <select id="getUpdateInfo" resultMap="updateInfoMap">
+    SELECT
+    p.id,
+    p.name,
+    p.product_category_id,
+    pc.parent_id AS cateParentId,
+    p.price,
+    p.publish_status,
+    p.verify_status,
+    p.weight,
+    p.sort,
+    p.description,
+    p.detail_html
+    FROM pms_product p
+    LEFT JOIN pms_product_category pc ON pc.id = p.product_category_id
+    WHERE p.id = #{id}
+  </select>
+
+  <!-- 各子表的查询方法 -->
+  <select id="selectProductLadderByProductId" resultMap="org.nanguo.lemall.business.admin.product.mapper.PmsProductLadderMapper.BaseResultMap">
+    SELECT * FROM pms_product_ladder WHERE product_id = #{productId}
+  </select>
+
+  <select id="selectProductFullReductionByProductId" resultMap="org.nanguo.lemall.business.admin.product.mapper.PmsProductFullReductionMapper.BaseResultMap">
+    SELECT * FROM pms_product_full_reduction WHERE product_id = #{productId}
+  </select>
+
+  <select id="selectMemberPriceByProductId" resultMap="org.nanguo.lemall.business.admin.product.mapper.PmsMemberPriceMapper.BaseResultMap">
+    SELECT * FROM pms_member_price WHERE product_id = #{productId}
+  </select>
+
+  <select id="selectSkuStockByProductId" resultMap="org.nanguo.lemall.business.admin.product.mapper.PmsSkuStockMapper.BaseResultMap">
+    SELECT * FROM pms_sku_stock WHERE product_id = #{productId}
+  </select>
+
+  <select id="selectProductAttributeValueByProductId" resultMap="org.nanguo.lemall.business.admin.product.mapper.PmsProductAttributeValueMapper.BaseResultMap">
+    SELECT * FROM pms_product_attribute_value WHERE product_id = #{productId}
+  </select>
+
+  <select id="selectSubjectProductRelationByProductId" resultMap="org.nanguo.lemall.business.admin.content.mapper.CmsSubjectProductRelationMapper.BaseResultMap">
+    SELECT * FROM cms_subject_product_relation WHERE product_id = #{productId}
+  </select>
+
+  <select id="selectPrefrenceAreaProductRelationByProductId" resultMap="org.nanguo.lemall.business.admin.content.mapper.CmsPrefrenceAreaProductRelationMapper.BaseResultMap">
+    SELECT * FROM cms_prefrence_area_product_relation WHERE product_id = #{productId}
+  </select>
 </mapper>

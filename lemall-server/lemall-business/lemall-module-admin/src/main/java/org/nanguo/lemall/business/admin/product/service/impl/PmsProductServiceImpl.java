@@ -9,7 +9,9 @@ import org.nanguo.lemall.business.admin.content.entity.CmsSubjectProductRelation
 import org.nanguo.lemall.business.admin.content.service.CmsPrefrenceAreaProductRelationService;
 import org.nanguo.lemall.business.admin.content.service.CmsSubjectProductRelationService;
 import org.nanguo.lemall.business.admin.product.dto.request.PmsProductQueryParamRequestDTO;
-import org.nanguo.lemall.business.admin.product.dto.request.PmsProductRequestDTO;
+import org.nanguo.lemall.business.admin.product.dto.request.PmsProductParamRequestDTO;
+import org.nanguo.lemall.business.admin.product.dto.response.PmsProductParamResponseDTO;
+import org.nanguo.lemall.business.admin.product.dto.response.PmsProductParamResultResponseDTO;
 import org.nanguo.lemall.business.admin.product.dto.response.PmsProductResponseDTO;
 import org.nanguo.lemall.business.admin.product.entity.*;
 import org.nanguo.lemall.business.admin.product.service.*;
@@ -55,7 +57,7 @@ public class PmsProductServiceImpl extends ServiceImpl<PmsProductMapper, PmsProd
     }
 
     @Override
-    public boolean create(PmsProductRequestDTO requestDTO) {
+    public boolean create(PmsProductParamRequestDTO requestDTO) {
         // 1. 创建商品
         requestDTO.setId(null);
         PmsProduct pmsProduct = new PmsProduct();
@@ -123,6 +125,11 @@ public class PmsProductServiceImpl extends ServiceImpl<PmsProductMapper, PmsProd
         }).toList();
         cmsPrefrenceAreaProductRelationService.saveBatch(cmsPrefrenceAreaProductRelations);
         return true;
+    }
+
+    @Override
+    public PmsProductParamResultResponseDTO getUpdateInfo(Long id) {
+        return baseMapper.getUpdateInfo(id);
     }
 
     private void handleSkuStockCode(List<PmsSkuStock> skuStockList, Long productId) {
