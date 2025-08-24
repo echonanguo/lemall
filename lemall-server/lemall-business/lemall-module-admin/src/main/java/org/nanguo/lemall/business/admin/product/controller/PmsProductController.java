@@ -14,6 +14,8 @@ import org.nanguo.lemall.util.response.Result;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Validated
 @RestController
 @RequiredArgsConstructor
@@ -44,5 +46,60 @@ public class PmsProductController {
     public Result<PmsProductParamResultResponseDTO> updateInfo(@PathVariable("id") Long id) {
         PmsProductParamResultResponseDTO res = pmsProductService.getUpdateInfo(id);
         return Result.success(res);
+    }
+
+    @Operation(summary = "更新商品")
+    @PostMapping("/update/{id}")
+    public Result<?> update(@PathVariable Long id, @Validated @RequestBody PmsProductParamRequestDTO requestDTO) {
+        boolean b = pmsProductService.updateProduct(id,requestDTO);
+        return b ? Result.success() : Result.fail("更新商品失败");
+    }
+
+    @Operation(summary = "根据商品名称或货号模糊查询")
+    @GetMapping("/simpleList")
+    public Result<List<PmsProductResponseDTO>> getSimpleList(String keyword) {
+        List<PmsProductResponseDTO> res = pmsProductService.getSimpleList(keyword);
+        return Result.success(res);
+    }
+
+    @Operation(summary = "批量修改审核状态")
+    @PostMapping("/update/verifyStatus")
+    public Result<?> updateVerifyStatus(@RequestParam("ids") List<Long> ids,
+                                        @RequestParam("verifyStatus") Integer verifyStatus,
+                                        @RequestParam("detail") String detail) {
+        boolean b = pmsProductService.updateVerifyStatus(ids,verifyStatus,detail);
+        return b ? Result.success() : Result.fail("批量修改审核状态失败");
+    }
+
+    @Operation(summary = "批量上下架")
+    @PostMapping("/update/publishStatus")
+    public Result<?> updatePublishStatus(@RequestParam("ids") List<Long> ids,
+                                         @RequestParam("publishStatus") Integer publishStatus) {
+        boolean b = pmsProductService.updatePublishStatus(ids,publishStatus);
+        return b ? Result.success() : Result.fail("批量上下架失败");
+    }
+
+    @Operation(summary = "批量推荐商品")
+    @PostMapping("/update/recommendStatus")
+    public Result<?> updateRecommendStatus(@RequestParam("ids") List<Long> ids,
+                                           @RequestParam("recommendStatus") Integer recommendStatus) {
+        boolean b = pmsProductService.updateRecommendStatus(ids,recommendStatus);
+        return b ? Result.success() : Result.fail("批量推荐商品失败");
+    }
+
+    @Operation(summary = "批量设为新品")
+    @PostMapping("/update/newStatus")
+    public Result<?> updateNewStatus(@RequestParam("ids") List<Long> ids,
+                                     @RequestParam("newStatus") Integer newStatus) {
+        boolean b = pmsProductService.updateNewStatus(ids,newStatus);
+        return b ? Result.success() : Result.fail("批量设为新品失败");
+    }
+
+    @Operation(summary = "批量修改删除状态")
+    @PostMapping("/update/deleteStatus")
+    public Result<?> updateDeleteStatus(@RequestParam("ids") List<Long> ids,
+                                        @RequestParam("deleteStatus") Integer deleteStatus) {
+        boolean b = pmsProductService.updateDeleteStatus(ids,deleteStatus);
+        return b ? Result.success() : Result.fail("批量修改删除状态失败");
     }
 }

@@ -10,6 +10,8 @@ import org.nanguo.lemall.business.admin.product.entity.PmsProduct;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 public interface PmsProductService extends IService<PmsProduct>{
 
 
@@ -36,4 +38,62 @@ public interface PmsProductService extends IService<PmsProduct>{
      * @return 结果
      */
     PmsProductParamResultResponseDTO getUpdateInfo(Long id);
+
+    /**
+     * 更新商品
+     * @param id id
+     * @param requestDTO 参数
+     * @return 成功标志
+     */
+    @Transactional(rollbackFor = Exception.class)
+    boolean updateProduct(Long id, PmsProductParamRequestDTO requestDTO);
+
+    /**
+     * 根据商品名称或货号模糊查询
+     * @param keyword 关键词
+     * @return 结果
+     */
+    List<PmsProductResponseDTO> getSimpleList(String keyword);
+
+    /**
+     * 批量修改审核状态
+     * @param ids ids
+     * @param verifyStatus 审核状态
+     * @param detail 审核详情
+     * @return 成功标志
+     */
+    @Transactional(rollbackFor = Exception.class)
+    boolean updateVerifyStatus(List<Long> ids, Integer verifyStatus, String detail);
+
+    /**
+     * 批量上下架
+     * @param ids ids
+     * @param publishStatus 上下架状态
+     * @return 成功标志
+     */
+    boolean updatePublishStatus(List<Long> ids, Integer publishStatus);
+
+    /**
+     * 批量推荐商品
+     * @param ids ids
+     * @param recommendStatus 推荐状态
+     * @return 成功标志
+     */
+    boolean updateRecommendStatus(List<Long> ids, Integer recommendStatus);
+
+    /**
+     * 批量设为新品
+     * @param ids ids
+     * @param newStatus 新品状态
+     * @return 成功标志
+     */
+    boolean updateNewStatus(List<Long> ids, Integer newStatus);
+
+    /**
+     * 批量修改删除状态
+     * @param ids ids
+     * @param deleteStatus 删除状态
+     * @return 成功标志
+     */
+    boolean updateDeleteStatus(List<Long> ids, Integer deleteStatus);
 }
