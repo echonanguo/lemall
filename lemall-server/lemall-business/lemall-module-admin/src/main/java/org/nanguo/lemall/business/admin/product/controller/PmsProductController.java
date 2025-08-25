@@ -6,7 +6,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.nanguo.lemall.business.admin.product.dto.request.PmsProductQueryParamRequestDTO;
 import org.nanguo.lemall.business.admin.product.dto.request.PmsProductParamRequestDTO;
-import org.nanguo.lemall.business.admin.product.dto.response.PmsProductParamResponseDTO;
 import org.nanguo.lemall.business.admin.product.dto.response.PmsProductParamResultResponseDTO;
 import org.nanguo.lemall.business.admin.product.dto.response.PmsProductResponseDTO;
 import org.nanguo.lemall.business.admin.product.service.PmsProductService;
